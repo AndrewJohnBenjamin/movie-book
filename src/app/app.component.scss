@@ -1,0 +1,48 @@
+mat-toolbar {
+    padding: 20px 15%;
+
+    .toolbar-item-space {
+        margin-right: 32px;
+    }
+
+    span{
+        font-size: 25px;  
+    }
+
+    .flex {
+        width: 100%;
+    }
+
+    .menu-item {
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .language-selections {
+        text-align: right;
+
+        .active {
+            background: orange;
+            color: black;
+        }
+
+        div {
+            border: 1px solid white;
+            padding: 5px;
+            border-radius: 30%;
+            width: 20px;
+            line-height: 20px;
+            display: inline-flex;
+            cursor: pointer;
+
+            &:first-of-type {
+                margin-right: 8px;
+            }
+
+            >span {
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+    }
+}
