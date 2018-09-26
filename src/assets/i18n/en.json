@@ -17,6 +17,8 @@
     "MOVIES_HEADING": "Trending Movies (last 7 days)",
     "SHOWS_HEADING": "Trending Shows (last 7 days)"
   },
+  "IN_THEATRES": "In Theatres",
+  "ON_TV": "On Tv",
   "MOVIE": {
     "RELEASED": "Released",
     "BUDGET": "Budget",

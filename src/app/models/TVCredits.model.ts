@@ -1,4 +1,4 @@
-import { TVCast } from './TVCast';
+import { TVCast } from './TVCast.model';
 
 export class TVCredits {
   cast?: Array<TVCast>;

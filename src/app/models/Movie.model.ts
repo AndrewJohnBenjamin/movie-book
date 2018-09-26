@@ -1,8 +1,8 @@
-import { Genre } from './Genre';
-import { ProductionCompany } from './ProductionCompany';
-import { Country } from './Country';
-import { SpokenLanguage } from './SpokenLanguage';
-import { MovieCredits } from './MovieCredits';
+import { Genre } from './Genre.model';
+import { ProductionCompany } from './ProductionCompany.model';
+import { Country } from './Country.model';
+import { SpokenLanguage } from './SpokenLanguage.model';
+import { MovieCredits } from './MovieCredits.model';
 
 export class Movie {
   adult?: boolean;

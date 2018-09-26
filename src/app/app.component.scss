@@ -10,7 +10,7 @@ mat-toolbar {
     }
 
     .flex {
-        width: 100%;
+        flex-basis: 100%;
     }
 
     .menu-item {
@@ -20,6 +20,7 @@ mat-toolbar {
 
     .language-selections {
         text-align: right;
+        display: flex;
 
         .active {
             background: orange;
@@ -45,4 +46,8 @@ mat-toolbar {
             }
         }
     }
+}
+
+.router-outlet-container {
+    padding: 0 15%;
 }

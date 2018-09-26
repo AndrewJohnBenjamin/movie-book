@@ -1,4 +1,4 @@
-export class APIConfigImages {
+export class ImagesConfig {
   base_url?: string;
   secure_base_url?: string;
   backdrop_sizes?: Array<string>;

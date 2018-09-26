@@ -1,0 +1,32 @@
+//@import "../../globals";
+
+:host {
+  mat-card-content {
+    display: flex;
+    flex-direction: row;
+    > div {
+      flex: 1;
+    }
+  }
+  .instruction-text {
+    margin-bottom: 16px;
+  }
+  .mat-list-item {
+    height: unset;
+    &:hover {
+      //@include mat-nav-list-item-hover()
+    }
+    .trending-item {
+      display: flex;
+      flex-direction: row;
+      > div {
+        padding-left: 16px;
+      }
+    }
+    .trending-item-scores {
+      flex: 1;
+      font-size: 12px;
+      padding-top: 8px;
+    }
+  }
+}

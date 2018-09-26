@@ -1,10 +1,10 @@
-import { TVSeason } from './TVSeason';
-import { ProductionCompany } from './ProductionCompany';
-import { TVLastEpisode } from './TVLastEpisode';
-import { TVNetwork } from './TVNetwork';
-import { Genre } from './Genre';
-import { TVCreator } from './TVCreator';
-import { TVCredits } from './TVCredits';
+import { TVSeason } from './TVSeason.model';
+import { ProductionCompany } from './ProductionCompany.model';
+import { TVLastEpisode } from './TVLastEpisode.model';
+import { TVNetwork } from './TVNetwork.model';
+import { Genre } from './Genre.model';
+import { TVCreator } from './TVCreator.model';
+import { TVCredits } from './TVCredits.model';
 
 export class TVShow {
   backdrop_path?: string;

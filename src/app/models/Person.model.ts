@@ -1,5 +1,5 @@
-import { MovieCredits } from './MovieCredits';
-import { TVCredits } from './TVCredits';
+import { MovieCredits } from './MovieCredits.model';
+import { TVCredits } from './TVCredits.model';
 
 export class Person {
   birthday?: string;
