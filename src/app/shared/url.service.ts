@@ -37,7 +37,7 @@ export class UrlService {
     return `${this.apiConfig.images.base_url}w45/${imagePath}`;
   }
 
-  public getHomePageItemUrl = (imagePath: string) => {
-    return `${this.apiConfig.images.base_url}w500_and_h282_face/${imagePath}`;
+  public getHomePageItemUrl = (imagePath: string, size: string) => {
+    return `${this.apiConfig.images.base_url}${size}/${imagePath}`;
   }
 }

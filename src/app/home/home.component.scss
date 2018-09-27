@@ -1,32 +1,45 @@
 //@import "../../globals";
 
 :host {
-  mat-card-content {
+  display: flex;
+  flex-direction: column;
+
+  input[type="text"] {
+    flex: 1;
+    padding-left: 30%;
+    font-size: 22px;
+    height: 50px;
+  }
+
+  .latest-entertainment-container {
+    padding-top:  50px;
     display: flex;
-    flex-direction: row;
-    > div {
-      flex: 1;
-    }
-  }
-  .instruction-text {
-    margin-bottom: 16px;
-  }
-  .mat-list-item {
-    height: unset;
-    &:hover {
-      //@include mat-nav-list-item-hover()
-    }
-    .trending-item {
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    cursor:  pointer;
+
+    .on-air-container {
+      flex-direction: column;
       display: flex;
-      flex-direction: row;
-      > div {
-        padding-left: 16px;
-      }
     }
-    .trending-item-scores {
-      flex: 1;
-      font-size: 12px;
-      padding-top: 8px;
+
+    .in-theatres-container {
+      flex-direction: column;
+      display: flex;
+    }
+
+    .poster {
+      width: 500px;
+      height: 281px;
+    }
+
+    .inline-images {
+      display: flex;
+
+      img {
+        width: 50%;
+      }
     }
   }
 }

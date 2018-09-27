@@ -18,12 +18,13 @@ export class HomeComponent implements OnInit {
 
   }
 
-  /**
-   * A method that gets a fully qualified path for the supplied poster
-   * @param poster the poster to get the full url for
-   */
-  public getPosterUrl = (poster: string) => {
-    return this.urlService.getHomePageItemUrl(poster);
+  public getImageSize(index: number) {
+    return index > 0 ? '' : 'w1000_and_h563_face';
+  }
+
+
+  public getImage = (fileName: string, size: string) => {
+    return this.urlService.getHomePageItemUrl(fileName, size);
   }
 
   /**

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule, MatListModule } from '@angular/material';
+import { MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 
@@ -9,8 +9,9 @@ import { HomeComponent } from './home.component';
 @NgModule({
   imports: [
     CommonModule,
-    MatCardModule,
-    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
     TranslateModule,
     RouterModule
   ],
