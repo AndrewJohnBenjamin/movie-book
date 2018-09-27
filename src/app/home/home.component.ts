@@ -14,13 +14,21 @@ export class HomeComponent implements OnInit {
   public moviesInTheatres: Array<Movie> = [];
   public onAirTvShows: Array<TVShow> = [];
 
-  constructor(private route: ActivatedRoute, private urlService: UrlService
-  ) { }
+  constructor(private route: ActivatedRoute, private urlService: UrlService) {
 
-  public posterUrlPath = (posterPath: string) => {
-    return this.urlService.getHomePageItemUrl(posterPath);
   }
 
+  /**
+   * A method that gets a fully qualified path for the supplied poster
+   * @param poster the poster to get the full url for
+   */
+  public getPosterUrl = (poster: string) => {
+    return this.urlService.getHomePageItemUrl(poster);
+  }
+
+  /**
+   * Angular on init lifecycle hook
+   */
   ngOnInit() {
     this.moviesInTheatres = this.route.snapshot.data.moviesInTheatres;
     this.onAirTvShows = this.route.snapshot.data.onAirTvShows;

@@ -1,29 +1,33 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
-import { MatCardModule, MatListModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ApiConfigService } from '../services/api-config/api-config.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('HomeComponent Tests:', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  const movies = [{title: 'Star Wars'}];
-  const shows = [{name: 'Game of Thrones'}];
+  const moviesInTheatres = [{
+    title: 'Star Wars'
+  }];
 
-  const activateRouteStub = {
+  const onAirTvShows = [{
+    name: 'Game of Thrones'
+  }];
+
+  const mockActivateRoute = {
     snapshot: {
       data: {
-        trendingMovies: movies,
-        trendingShows: shows
+        moviesInTheatres: moviesInTheatres,
+        onAirTvShows: onAirTvShows
       }
     }
   };
-  const mockApiConfigService = {
-    getTrendingItemImageUrl: jasmine.createSpy()
+
+  const mockUrlService = {
+    getHomePageItemUrl: jasmine.createSpy()
   };
 
   beforeEach(async(() => {
@@ -34,8 +38,7 @@ describe('HomeComponent Tests:', () => {
         RouterTestingModule
       ],
       providers: [
-        { provide: ActivatedRoute, useValue: activateRouteStub },
-        { provide: ApiConfigService, useValue: mockApiConfigService }
+        { provide: ActivatedRoute, useValue: mockActivateRoute }
       ],
       schemas: [
         NO_ERRORS_SCHEMA
@@ -51,19 +54,19 @@ describe('HomeComponent Tests:', () => {
   });
 
   describe('On initialisation of the component', () => {
-    it('should assign the value of trendingMovies from the currently activated route data property', () => {
-      expect(component.trendingMovies).toEqual(activateRouteStub.snapshot.data.trendingMovies);
+    it('should get a list of movies that are currently in the cinema and store them on the component', () => {
+      expect(component.moviesInTheatres).toEqual(mockActivateRoute.snapshot.data.moviesInTheatres);
     });
-    it('should assign the value of trendingShows from the currently activated route data property', () => {
-      expect(component.trendingShows).toEqual(activateRouteStub.snapshot.data.trendingShows);
+    it('should get a list of movies that are currently on air and store them on the component', () => {
+      expect(component.onAirTvShows).toEqual(mockActivateRoute.snapshot.data.onAirTvShows);
     });
   });
 
-  describe('When retrieving a posterUrlPath for a given movie record', () => {
+  describe('When the \'getPosterUrl\' method is called', () => {
     it('should call getTrendingItemImageUrl on the apiConfigService using the supplied movie poster_path value', () => {
-      const posterPath = '/bla.jpg';
-      component.posterUrlPath(posterPath);
-      expect(mockApiConfigService.getTrendingItemImageUrl).toHaveBeenCalledWith(posterPath);
+      const mockPosterPath = '/mockPosterName.jpg';
+      component.getPosterUrl(mockPosterPath);
+      expect(mockUrlService.getHomePageItemUrl).toHaveBeenCalledWith(mockPosterPath);
     });
   });
 });

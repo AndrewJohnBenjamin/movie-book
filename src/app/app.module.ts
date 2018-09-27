@@ -10,7 +10,6 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS  } from '@angular/commo
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material';
-import { TmdbService } from './data-services/tmdb.service';
 import { APIRequestInterceptorService } from './shared/api-request-interceptor.service';
 
 export function urlInitializationProvider(urlService: UrlService) {

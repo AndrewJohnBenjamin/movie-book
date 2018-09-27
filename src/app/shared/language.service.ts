@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 /**
- * A class that provides method for the management of application languages
+ * A class that provides methods for the management of language selection
  */
 export class LanguageService {
   public currentlySelectedLanguage: Subject<string> = new Subject<string>();

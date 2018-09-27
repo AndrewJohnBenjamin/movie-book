@@ -24,7 +24,7 @@
         <mat-list-item *ngFor="let show of onAirTvShows; let i = index;">
           <div class="trending-item">
             <div>
-              <img [src]="posterUrlPath(show.poster_path)" *ngIf="show.poster_path" />
+              <img [src]="getPosterUrl(show.poster_path)" *ngIf="show.poster_path" />
             </div>
             <div>
               <!-- <a routerLink="/tv/{{show.id}}">{{show.name}} ({{show.first_air_date | date : 'yyyy'}})</a>

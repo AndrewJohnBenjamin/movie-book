@@ -11,14 +11,20 @@ export class TmdbService {
   constructor(private http: HttpClient, private languageService: LanguageService) {
   }
 
+  /**
+   * A method that retrieves a list of latest cinema releases
+   */
   public getLatestCinemaReleases = () => {
     const url = [
-      `${environment.apiUrl}/${environment.apiVersion}/discover/movie?api_key=${environment.apiKey}`,
+      `${environment.apiUrl}/${environment.apiVersion}/movie/now_playing?api_key=${environment.apiKey}`,
       `&language=${this.languageService.getLanguageFromLocalStorage()}`
     ].join('');
     return this.http.get(url);
   }
 
+  /**
+   * A method that retrieves a list tv shows that are currently on the air
+   */
   public getOnAirTvShows = () => {
     const url = [
       `${environment.apiUrl}/${environment.apiVersion}/tv/on_the_air?api_key=${environment.apiKey}`,
@@ -26,12 +32,4 @@ export class TmdbService {
     ].join('');
     return this.http.get(url);
   }
-
-  // public movieSearch = (searchTerm: string) => {
-  //   const url = [
-  //     `${environment.apiUrl}/${environment.apiVersion}/discover/movie?api_key=${environment.apiKey}`,
-  //     `&${searchTerm}&language=${this.languageService.getLanguageFromLocalStorage()}`
-  //   ].join('');
-  //   return this.http.get(url);
-  // }
 }
