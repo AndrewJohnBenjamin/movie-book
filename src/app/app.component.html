@@ -1,19 +1,10 @@
 <mat-toolbar color="primary">
   <!-- <img src="../assets/images/movie-book-logo-medium.png"> -->
   <div class="toolbar-item-space">
-    <h2>MOVIE BOOK</h2>
-  </div>
-  <div class="toolbar-item-space">
-    <span translate class="menu-item">DISCOVER</span>
-  </div>
-  <div class="toolbar-item-space">
-    <span translate class="menu-item">MOVIES</span>
-  </div>
-  <div class="toolbar-item-space">
-    <span translate class="menu-item">TV_SHOWS</span>
+    <h2 routerLink="/home">MOVIE BOOK</h2>
   </div>
   <div class="flex">
-    <span translate class="menu-item">PEOPLE</span>
+    <span translate class="menu-item">DISCOVER</span>
   </div>
   <div class="language-selections">
     <div (click)="selectLanguage('en')" [ngClass]="{'active': selectedLanguage === 'en'}">

@@ -37,11 +37,16 @@ export class TmdbService {
    * A method that gets the movie with the supplied id
    * @param movieId the id of the movie to retrieve
    */
-  public getMovie = (movieId: string) => {
-    const url = [
+  public getMovie = (movieId: string, appendToResponse?: string) => {
+    let url = [
       `${environment.apiUrl}/${environment.apiVersion}/movie/${movieId}?api_key=${environment.apiKey}`,
       `&language=${this.languageService.getLanguageFromLocalStorage()}`
     ].join('');
+
+    if (appendToResponse) {
+      url += `&append_to_response=${appendToResponse}`;
+    }
+
     return this.http.get(url);
   }
 
@@ -61,11 +66,16 @@ export class TmdbService {
 * A method that gets a person with the supplied id
 * @param personId the id of the person to retrieve
 */
-  public getPerson = (personId: string) => {
-    const url = [
+  public getPerson = (personId: string, appendToResponse: string) => {
+    let url = [
       `${environment.apiUrl}/${environment.apiVersion}/person/${personId}?api_key=${environment.apiKey}`,
       `&language=${this.languageService.getLanguageFromLocalStorage()}`
     ].join('');
+
+    if (appendToResponse) {
+      url += `&append_to_response=${appendToResponse}`;
+    }
+
     return this.http.get(url);
   }
 }

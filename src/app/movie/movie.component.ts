@@ -10,9 +10,21 @@ import { Movie } from '../models/Movie.model';
 })
 export class MovieComponent implements OnInit {
   public movie: Movie;
-
+  public posterPath: string;
   constructor(private route: ActivatedRoute, private urlService: UrlService) {
 
+  }
+
+  public getCastMemberSmallPhotoUrl(imageName: string) {
+    return this.urlService.getCastProfileUrl(imageName);
+  }
+
+  public getBackdropUrl = () => {
+    return this.urlService.getBackdropUrl(this.movie.backdrop_path);
+  }
+
+  public getMoviePosterUrl() {
+    return this.urlService.getMoviePosterUrl(this.movie.poster_path);
   }
 
   /**

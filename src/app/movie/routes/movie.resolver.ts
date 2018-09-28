@@ -10,6 +10,6 @@ export class MovieResolver implements Resolve<Movie> {
 
   resolve(activateRoute: ActivatedRouteSnapshot) {
     const movieId = activateRoute.paramMap.get('id');
-    return this.tmdbService.getMovie(movieId);
+    return this.tmdbService.getMovie(movieId, 'credits,reviews');
   }
 }

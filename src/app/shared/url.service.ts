@@ -29,12 +29,16 @@ export class UrlService {
     return `${this.apiConfig.images.base_url}w185/${imagePath}`;
   }
 
+  public getBackdropUrl = (imagePath: string) => {
+    return `${this.apiConfig.images.base_url}w1280/${imagePath}`;
+  }
+
   public getPersonProfileUrl = (imagePath: string) => {
     return `${this.apiConfig.images.base_url}w185/${imagePath}`;
   }
 
   public getCastProfileUrl = (imagePath: string) => {
-    return `${this.apiConfig.images.base_url}w45/${imagePath}`;
+    return `${this.apiConfig.images.base_url}w138_and_h175_face/${imagePath}`;
   }
 
   public getHomePageItemUrl = (imagePath: string, size: string) => {

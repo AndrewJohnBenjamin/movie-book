@@ -1,1 +1,45 @@
-<h2>MOVIE</h2>
+<div class="movie-info-container">
+    <h2>{{ movie.title + ' (' + movie.release_date.split('-')[0] + ')' }}</h2>
+    <div>
+        <div>
+            <img class="movie-poster-pic" [src]="getMoviePosterUrl()" *ngIf="movie.poster_path">
+            <div class="movie-summary">
+                <div *ngIf="movie.release_date"><label>{{'MOVIE.RELEASED' | translate}}:</label> {{movie.release_date |
+                    date : 'shortDate'}}</div>
+                <div *ngIf="movie.budget"><label>{{'MOVIE.BUDGET' | translate}}:</label> {{movie.budget | currency }}</div>
+                <div *ngIf="movie.runtime"><label>{{'MOVIE.RUNTIME' | translate}}:</label> {{movie.runtime}}
+                    {{'MINUTES' |
+                    translate}}</div>
+                <div *ngIf="movie.popularity"><label>{{'POPULARITY' | translate}}:</label> {{movie.popularity}} </div>
+                <div *ngIf="movie.vote_average"><label>{{'VOTE_AVERAGE' | translate}}:</label> {{movie.vote_average}}
+                </div>
+                <div *ngIf="movie.vote_count"><label>{{'VOTE_COUNT' | translate}}:</label> {{movie.vote_count}}</div>
+                <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank">{{'VISIT_HOME_PAGE' | translate}}</a>
+            </div>
+        </div>
+        <div>
+            <div class="summary-text">
+                <span>{{ movie.overview }}</span>
+            </div>
+            <mat-tab-group>
+                <mat-tab label="Cast">
+                    <div class="spacer"></div>
+                    <div class="cast-contaier">
+                        <mat-card routerLink="/person/{{castMember.id}}" *ngFor="let castMember of movie.credits.cast">
+                            <mat-card-content>
+                                <div>
+                                    <img [src]="getCastMemberSmallPhotoUrl(castMember.profile_path)">
+                                    <span>{{ castMember.name }}</span>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Reviews">
+                    <div class="spacer"></div>
+                    <span>{{ movie.vote_average }}</span>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

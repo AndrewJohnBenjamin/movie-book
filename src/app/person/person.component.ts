@@ -10,9 +10,17 @@ import { Person } from '../models/Person.model';
 })
 export class PersonComponent implements OnInit {
   public person: Person;
-  
+
   constructor(private route: ActivatedRoute, private urlService: UrlService) {
 
+  }
+
+  public getProfileImageUrl() {
+    return this.urlService.getPersonProfileUrl(this.person.profile_path);
+  }
+
+  public getSmallMoviePosterUrl(imageName: string) {
+    return this.urlService.getMoviePosterUrl(imageName);
   }
 
   /**

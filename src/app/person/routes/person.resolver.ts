@@ -10,6 +10,6 @@ export class PersonResolver implements Resolve<Person> {
 
   resolve(activateRoute: ActivatedRouteSnapshot) {
     const personId = activateRoute.paramMap.get('id');
-    return this.tmdbService.getPerson(personId);
+    return this.tmdbService.getPerson(personId, 'movie_credits,tv_credits');
   }
 }

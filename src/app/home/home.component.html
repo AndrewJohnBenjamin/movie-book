@@ -1,20 +1,28 @@
 <input type="text" matInput placeholder="Search for Movies, Tv Shows or People">
+<div class="static-background"></div>
 <div class="latest-entertainment-container">
   <div class="in-theatres-container">
     <h2>{{'IN_THEATRES' | translate}}</h2>
-    <img class="poster" [src]="getImage(moviesInTheatres[0].poster_path, 'w1000_and_h563_face')" *ngIf="moviesInTheatres[0].poster_path" />
+    <img routerLink="/movie/{{moviesInTheatres[0].id}}" class="poster" [src]="getImage(moviesInTheatres[0].poster_path, 'w1000_and_h563_face')"
+      *ngIf="moviesInTheatres[0].poster_path" />
+
     <div class="inline-images">
-      <img [src]="getImage(moviesInTheatres[1].backdrop_path, 'w500_and_h282_face')" *ngIf="moviesInTheatres[1].backdrop_path" />
-      <img [src]="getImage(moviesInTheatres[2].backdrop_path, 'w500_and_h282_face')" *ngIf="moviesInTheatres[2].backdrop_path" />
+      <img routerLink="/movie/{{moviesInTheatres[1].id}}" [src]="getImage(moviesInTheatres[1].backdrop_path, 'w500_and_h282_face')"
+        *ngIf="moviesInTheatres[1].backdrop_path"/>
+      <img routerLink="/movie/{{moviesInTheatres[2].id}}" [src]="getImage(moviesInTheatres[2].backdrop_path, 'w500_and_h282_face')"
+        *ngIf="moviesInTheatres[2].backdrop_path" />
     </div>
   </div>
 
   <div class="on-air-container">
     <h2>{{'ON_TV' | translate}}</h2>
     <div class="inline-images">
-      <img [src]="getImage(onAirTvShows[1].backdrop_path, 'w500_and_h282_face')" *ngIf="onAirTvShows[1].backdrop_path" />
-      <img [src]="getImage(onAirTvShows[2].backdrop_path, 'w500_and_h282_face')" *ngIf="onAirTvShows[2].backdrop_path" />
+      <img routerLink="/movie/{{onAirTvShows[1].id}}" [src]="getImage(onAirTvShows[1].backdrop_path, 'w500_and_h282_face')"
+        *ngIf="onAirTvShows[1].backdrop_path" />
+      <img routerLink="/movie/{{onAirTvShows[2].id}}" [src]="getImage(onAirTvShows[2].backdrop_path, 'w500_and_h282_face')"
+        *ngIf="onAirTvShows[2].backdrop_path" />
     </div>
-    <img class="poster" [src]="getImage(onAirTvShows[0].poster_path, 'w1000_and_h563_face')" *ngIf="onAirTvShows[0].poster_path" />
+    <img routerLink="/movie/{{onAirTvShows[0].id}}" class="poster" [src]="getImage(onAirTvShows[0].poster_path, 'w1000_and_h563_face')"
+      *ngIf="onAirTvShows[0].poster_path" />
   </div>
 </div>
