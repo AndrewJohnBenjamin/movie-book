@@ -11,6 +11,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material';
 import { APIRequestInterceptorService } from './shared/api-request-interceptor.service';
+import { MovieModule } from './movie/movie.module';
+import { TvShowModule } from './tv-show/tv-show.module';
+import { PersonModule } from './person/person.module';
+import { DiscoverModule } from './discover/discover.module';
 
 export function urlInitializationProvider(urlService: UrlService) {
   return () => urlService.getBaseConfig();
@@ -31,6 +35,10 @@ export function urlInitializationProvider(urlService: UrlService) {
     MatIconModule,
     MatButtonModule,
     HomeModule,
+    MovieModule,
+    TvShowModule,
+    PersonModule,
+    DiscoverModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

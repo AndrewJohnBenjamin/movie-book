@@ -1,8 +1,8 @@
-import { MoviesInTheatresResolver } from './shared/movies-in-threatres.resolver';
+import { MoviesInTheatresResolver } from './movies-in-threatres.resolver';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { OnAirShowsResolver } from './shared/on-air-shows.resolver';
+import { OnAirShowsResolver } from './on-air-shows.resolver';
 
 const routes: Routes = [
   {

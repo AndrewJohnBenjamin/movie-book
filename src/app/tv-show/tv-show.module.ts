@@ -19,4 +19,4 @@ import { TvShowRoutesModule } from './routes/tv-show-routes.module';
   ],
   exports:  [ TvShowComponent ]
 })
-export class TvModule { }
+export class TvShowModule { }

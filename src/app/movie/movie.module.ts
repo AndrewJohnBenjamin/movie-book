@@ -19,4 +19,4 @@ import { MovieRoutesModule } from './routes/movie-routes.module';
   ],
   exports:  [ MovieComponent ]
 })
-export class MoviesModule { }
+export class MovieModule { }

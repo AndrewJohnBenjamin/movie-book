@@ -19,4 +19,4 @@ import { PersonRoutesModule } from './routes/person-routes.module';
   ],
   exports:  [ PersonComponent ]
 })
-export class DiscoverModule { }
+export class PersonModule { }
