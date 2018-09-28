@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Resolve} from '@angular/router';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { TmdbService } from '../data-services/tmdb.service';
-import { TVShow } from '../models/TVShow.model';
-import { SearchResponse } from '../models/SearchResponse';
+import { TmdbService } from './data-services/tmdb.service';
+import { TVShow } from './models/TVShow.model';
+import { SearchResponse } from './models/SearchResponse';
 
 @Injectable()
 export class OnAirShowsResolver implements Resolve<Array<TVShow>> {
