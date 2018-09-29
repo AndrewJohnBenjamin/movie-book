@@ -1,14 +1,22 @@
 <div>
     <h2 class="white-title">{{ person.name }}</h2>
-    <img class="person-poster-pic" [src]="getProfileImageUrl()" *ngIf="person.profile_path">
-</div>
-<div>
+    <img [ngClass]="{'auto-height': !person.poster_path}" class="person-poster-pic" [src]="getProfileImageUrl()">
     <div class="person-summary">
-        <div *ngIf="person.birthday"><label>Born On:</label> {{ person.birthday |
-            date : 'longDate'}}</div>
-        <div *ngIf="person.place_of_birth"><label>Birthplace:</label> {{ person.place_of_birth }}</div>
-        <div *ngIf="person.known_for_department"><label>Best Known For:</label> {{ person.known_for_department }}</div>
+        <div>
+            <label>Born On:</label>
+            <div *ngIf="person.birthday">{{ person.birthday | date : 'longDate'}}</div>
+        </div>
+        <div>
+            <label>Birthplace:</label>
+            <div *ngIf="person.place_of_birth">{{ person.place_of_birth }}</div>
+        </div>
+        <div>
+            <label>Best Known For:</label>
+            <div *ngIf="person.known_for_department">{{ person.known_for_department }}</div>
+        </div>
     </div>
+</div>
+<div class="flex">
     <mat-tab-group>
         <mat-tab label="Biography">
             <div class="spacer"></div>
@@ -20,7 +28,8 @@
                 <mat-card class="pointerCursor" routerLink="/movie/{{movie.id}}" *ngFor="let movie of person.movie_credits.cast">
                     <mat-card-content>
                         <div>
-                            <img [src]="getSmallMoviePosterUrl(movie.poster_path)">
+                            <img [ngClass]="{'default-pic': !movie.poster_path}" [src]="getSmallMoviePosterUrl(movie.poster_path)">
+                            <span *ngIf="!movie.poster_path">{{ movie.title }}</span>
                         </div>
                     </mat-card-content>
                 </mat-card>
@@ -32,7 +41,8 @@
                 <mat-card class="pointerCursor" routerLink="/tv-show/{{tvShow.id}}" *ngFor="let tvShow of person.tv_credits.cast">
                     <mat-card-content>
                         <div>
-                            <img [src]="getSmallMoviePosterUrl(tvShow.poster_path)">
+                            <img [ngClass]="{'default-pic': !tvShow.poster_path}" [src]="getSmallMoviePosterUrl(tvShow.poster_path)">
+                            <span *ngIf="!tvShow.poster_path">{{ tvShow.name }}</span>
                         </div>
                     </mat-card-content>
                 </mat-card>

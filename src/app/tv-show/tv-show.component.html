@@ -1,31 +1,52 @@
-<div class="tv-show-info-container">
-    <h2>{{ tvShow.name }}</h2>
-    <div>
+<div>
+    <h2 class="white-title">{{ tvShow.name + ' (' + tvShow.first_air_date.split('-')[0] + ')'}}</h2>
+    <img [ngClass]="{'auto-height': !tvShow.poster_path}" class="tv-show-poster-pic" [src]="getTvShowPosterUrl()">
+    <div class="tv-show-summary">
         <div>
-            <img class="tv-show-poster-pic" [src]="getTvShowPosterUrl()" *ngIf="tvShow.poster_path">
+            <label>{{'MOVIE.RELEASED' | translate}}:</label>
+            <div *ngIf="tvShow.first_air_date">{{tvShow.first_air_date | date : 'longDate'}}</div>
         </div>
         <div>
-            <mat-tab-group>
-                <mat-tab label="Summary">
-                    <div class="spacer"></div>
-                    <span>{{ tvShow.overview }}</span>
-                </mat-tab>
-                <mat-tab label="Cast">
-                    <div class="spacer"></div>
-                    <div class="cast-contaier">
-                        <mat-card routerLink="/person/{{castMember.id}}" *ngFor="let castMember of tvShow.credits.cast">
-                            <mat-card-content>
-                                <div>
-                                    <img [src]="getCastMemberSmallPhotoUrl(castMember.profile_path)">
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Reviews">
-                    <div class="spacer"></div>
-                </mat-tab>
-            </mat-tab-group>
+            <label>Number Of Seasons:</label>
+            <div *ngIf="tvShow.number_of_seasons">{{ tvShow.number_of_seasons }}</div>
+        </div>
+        <div>
+            <label>Next Episode To Air:</label>
+            <div *ngIf="tvShow.next_episode_to_air">{{ tvShow.next_episode_to_air.air_date | date : 'longDate' }}</div>
+        </div>
+        <div>
+            <label>Average Vote:</label>
+            <div *ngIf="tvShow.vote_average">{{ tvShow.vote_average}}</div>
         </div>
     </div>
+</div>
+<div>
+    <mat-tab-group>
+        <mat-tab label="Overview">
+            <div class="spacer"></div>
+            <span>{{ tvShow.overview }}</span>
+        </mat-tab>
+        <mat-tab label="Cast">
+            <div class="spacer"></div>
+            <div class="cast-contaier">
+                <mat-card class="pointerCursor" routerLink="/person/{{castMember.id}}" *ngFor="let castMember of tvShow.credits.cast">
+                    <mat-card-content>
+                        <div>
+                            <img [src]="getCastMemberSmallPhotoUrl(castMember.profile_path)">
+                            <span>{{ castMember.name }}</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab *ngIf="tvShow.reviews.results.length > 0" label="Reviews">
+            <div class="spacer"></div>
+            <mat-card *ngFor="let review of tvShow.reviews.results">
+                <div>
+                    <span class="review-content">{{'"' + review.content + '"' }}</span>
+                    <span class="bold">{{ ' - ' + review.author }}</span>
+                </div>
+            </mat-card>
+        </mat-tab>
+    </mat-tab-group>
 </div>

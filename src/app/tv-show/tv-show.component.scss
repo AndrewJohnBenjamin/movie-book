@@ -1,74 +1,62 @@
 :host {
-    background-color: #333333;
     display: flex;
-    height: 200px;
-
-    .tv-show-info-container {
-        width: 1000px;
-        height: 500px;
-        margin-left: 15%;
-
-        h2 {
-            color: white;
-        }
-
-        .tv-show-poster-pic {
-            border: 1px solid grey;
-            height: 278px;
-        }
-
-        > div {
+    h2 {
+        position: absolute;
+    }
+    .tv-show-summary {
+        margin-left: 16px;
+        font-style: italic;
+        width: 200px;
+        >div {
+            margin-top: 16px;
             display: flex;
+            flex-direction: column;
             flex: 1;
-
-            div:first-of-type {
-                padding-left: 0px;
+            label {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                margin: 5px 0;
             }
-
-            >div {
-            padding-left: 24px;
-
-            .summary-text {
-                color: white;
-                height:126px;
-            }
-
-            mat-tab-group {
-                margin-top: 130px;
-
-                .spacer {
-                    height: 16px;
-                }
-
-                    .cast-contaier {
+        }
+    }
+    .tv-show-poster-pic {
+        border: 1px solid grey;
+        height: 278px;
+        margin-top: 60px;
+        background-color: white;
+        width: 200px;
+    }
+    .auto-height {
+        height: auto;
+    }
+    mat-tab-group {
+        margin-left: 16px;
+        margin-top: 140px;
+        .spacer {
+            height: 16px;
+        }
+        .cast-contaier {
+            display: flex;
+            flex-wrap: wrap;
+            mat-card {
+                padding: 0px;
+                margin: 8px;
+                mat-card-content {
+                    .review-content {
+                        font-style: italic;
+                    }
+                    div {
                         display: flex;
-                        flex: 1;
-                        overflow: hidden;
-                        flex-wrap: wrap;
-
-                        mat-card {
-                            padding: 0px;
-                            margin: 8px;
-                            cursor: pointer;
-
-                                mat-card-content {
-
-                                    >div {
-                                        display: flex;
-                                        flex-direction: column;
-
-                                        img {
-                                            width: 138px;
-                                            height: 175px;
-                                        }
-
-                                        span {
-                                            margin: auto;
-                                            height: 30px;
-                                            line-height: 30px;
-                                        }
-                                }
-                            }
+                        flex-direction: column;
+                        img {
+                            width: 138px;
+                            height: 175px;
+                        }
+                        span {
+                            margin: auto;
+                            height: 30px;
+                            line-height: 30px;
                         }
                     }
                 }

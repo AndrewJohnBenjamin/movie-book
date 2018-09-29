@@ -1,12 +1,22 @@
 :host {
     display: flex;
+    flex: 1;
+
+    h2 {
+        position: absolute;
+    }
+
     .person-summary {
-        color: white;
-        margin-top: 65px;
         margin-left: 16px;
         font-style: italic;
-        div {
-            margin: 5px 0px;
+        width: 200px;
+
+        >div {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+
             label {
                 font-style: normal;
                 font-weight: bold;
@@ -18,9 +28,17 @@
     .person-poster-pic {
         border: 1px solid grey;
         height: 278px;
+        width: 200px;
+        background-color: white;
+        margin-top: 60px;
     }
+
+    .auto-height {
+        height: auto;
+    }
+
     mat-tab-group {
-        margin-top: 12px;
+        margin-top: 140px;
         margin-left: 16px;
         .spacer {
             height: 16px;
@@ -38,6 +56,15 @@
                         img {
                             width: 138px;
                             height: 175px;
+                        }
+                        .default-pic {
+                            height: 130px;
+                        }
+                        span {
+                            flex: 1;
+                            margin: auto;
+                            height: 20px;
+                            line-height: 40px;
                         }
                     }
                 }

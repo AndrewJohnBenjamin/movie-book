@@ -10,6 +10,8 @@ import { environment } from '../../environments/environment';
 
 export class UrlService {
   public apiConfig: ApiConfig;
+  private defaultPersonPhotoUrl = '/assets/images/default-photo.png';
+  private defaultMovieAndTvPhotoUrl = '/assets/images/default-movie-tv-photo.png';
 
   constructor(private http: HttpClient) {
   }
@@ -26,6 +28,10 @@ export class UrlService {
   }
 
   public getMoviePosterUrl = (imagePath: string) => {
+    if (!imagePath) {
+      return this.defaultMovieAndTvPhotoUrl;
+    }
+
     return `${this.apiConfig.images.base_url}w185/${imagePath}`;
   }
 
@@ -34,10 +40,18 @@ export class UrlService {
   }
 
   public getPersonProfileUrl = (imagePath: string) => {
+    if (!imagePath) {
+      return this.defaultPersonPhotoUrl;
+    }
+
     return `${this.apiConfig.images.base_url}w185/${imagePath}`;
   }
 
   public getCastProfileUrl = (imagePath: string) => {
+    if (!imagePath) {
+      return this.defaultPersonPhotoUrl;
+    }
+
     return `${this.apiConfig.images.base_url}w138_and_h175_face/${imagePath}`;
   }
 
