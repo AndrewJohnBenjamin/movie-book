@@ -3,9 +3,12 @@
   <div class="toolbar-item-space">
     <h2 routerLink="/home">MOVIE BOOK</h2>
   </div>
-  <div class="flex">
-    <span translate class="menu-item">DISCOVER</span>
+  <div>
+    <span translate class="menu-item toolbar-item-space">DISCOVER</span>
   </div>
+  <mat-form-field floatLabel="never">
+    <input matInput placeholder="Search for Movies, Tv Shows or People" class="flex">
+  </mat-form-field>
   <div class="language-selections">
     <div (click)="selectLanguage('en')" [ngClass]="{'active': selectedLanguage === 'en'}">
       <span class="flex">en</span>

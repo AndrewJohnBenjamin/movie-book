@@ -5,7 +5,7 @@
         <div *ngIf="movie.release_date">
             <label>{{'MOVIE.RELEASED' | translate}}:</label>
             <div>{{movie.release_date |
-                date : 'shortDate'}}</div>
+                date : 'longDate'}}</div>
         </div>
         <div *ngIf="movie.budget">
             <label>{{'MOVIE.BUDGET' | translate}}:</label>

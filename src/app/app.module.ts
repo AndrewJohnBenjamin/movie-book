@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatProgressSpinnerModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatToolbarModule, MatProgressSpinnerModule, MatIconModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -34,6 +34,7 @@ export function urlInitializationProvider(urlService: UrlService) {
     MatProgressSpinnerModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
     HomeModule,
     MovieModule,
     TvShowModule,

@@ -1,37 +1,42 @@
 mat-toolbar {
     padding: 20px 15%;
-
     h2 {
         outline: 0;
         cursor: pointer;
     }
-
     .toolbar-item-space {
         margin-right: 32px;
     }
-
-    span{
-        font-size: 25px;  
+    mat-form-field {
+        width: 100%;
+        margin-right: 50px;
+        input[type="text"] {
+            flex: 1;
+            flex-basis: 100%;
+            ;
+            padding-left: 30%;
+            font-size: 22px;
+            height: 50px;
+            margin-top: 40px;
+        }
     }
-
+    span {
+        font-size: 25px;
+    }
     .flex {
         flex-basis: 100%;
     }
-
     .menu-item {
         font-size: 14px;
         cursor: pointer;
     }
-
     .language-selections {
         text-align: right;
         display: flex;
-
         .active {
             background: orange;
             color: black;
         }
-
         div {
             border: 1px solid white;
             padding: 5px;
@@ -40,11 +45,9 @@ mat-toolbar {
             line-height: 20px;
             display: inline-flex;
             cursor: pointer;
-
             &:first-of-type {
                 margin-right: 8px;
             }
-
             >span {
                 text-align: center;
                 font-size: 14px;
