@@ -19,9 +19,12 @@
         </div>
         <div>
             <div class="summary-text">
-                <span>{{ movie.overview }}</span>
             </div>
             <mat-tab-group>
+                <mat-tab label="Overview">
+                        <div class="spacer"></div>
+                        <span>{{ movie.overview }}</span>
+                </mat-tab>
                 <mat-tab label="Cast">
                     <div class="spacer"></div>
                     <div class="cast-contaier">

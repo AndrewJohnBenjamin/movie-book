@@ -16,6 +16,14 @@ export class TvShowComponent implements OnInit {
 
   }
 
+  public getCastMemberSmallPhotoUrl(imageName: string) {
+    return this.urlService.getCastProfileUrl(imageName);
+  }
+
+  public getTvShowPosterUrl() {
+    return this.urlService.getMoviePosterUrl(this.tvShow.poster_path);
+  }
+
   /**
    * Angular on init lifecycle hook
    */

@@ -19,10 +19,6 @@ export class MovieComponent implements OnInit {
     return this.urlService.getCastProfileUrl(imageName);
   }
 
-  public getBackdropUrl = () => {
-    return this.urlService.getBackdropUrl(this.movie.backdrop_path);
-  }
-
   public getMoviePosterUrl() {
     return this.urlService.getMoviePosterUrl(this.movie.poster_path);
   }

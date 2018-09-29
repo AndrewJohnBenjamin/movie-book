@@ -10,6 +10,6 @@ export class TvShowResolver implements Resolve<TVShow> {
 
   resolve(activateRoute: ActivatedRouteSnapshot) {
     const tvShowId = activateRoute.paramMap.get('id');
-    return this.tmdbService.getTvShow(tvShowId);
+    return this.tmdbService.getTvShow(tvShowId, 'credits,reviews');
   }
 }

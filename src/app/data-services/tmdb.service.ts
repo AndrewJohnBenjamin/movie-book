@@ -54,11 +54,16 @@ export class TmdbService {
  * A method that gets the tv show with the supplied id
  * @param tvShowId the id of the tv show to retrieve
  */
-  public getTvShow = (tvShowId: string) => {
-    const url = [
+  public getTvShow = (tvShowId: string, appendToResponse: string) => {
+    let url = [
       `${environment.apiUrl}/${environment.apiVersion}/tv/${tvShowId}?api_key=${environment.apiKey}`,
       `&language=${this.languageService.getLanguageFromLocalStorage()}`
     ].join('');
+
+    if (appendToResponse) {
+      url += `&append_to_response=${appendToResponse}`;
+    }
+
     return this.http.get(url);
   }
 

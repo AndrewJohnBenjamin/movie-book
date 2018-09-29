@@ -1,1 +1,31 @@
-<h2>TV SHOW</h2>
+<div class="tv-show-info-container">
+    <h2>{{ tvShow.name }}</h2>
+    <div>
+        <div>
+            <img class="tv-show-poster-pic" [src]="getTvShowPosterUrl()" *ngIf="tvShow.poster_path">
+        </div>
+        <div>
+            <mat-tab-group>
+                <mat-tab label="Summary">
+                    <div class="spacer"></div>
+                    <span>{{ tvShow.overview }}</span>
+                </mat-tab>
+                <mat-tab label="Cast">
+                    <div class="spacer"></div>
+                    <div class="cast-contaier">
+                        <mat-card routerLink="/person/{{castMember.id}}" *ngFor="let castMember of tvShow.credits.cast">
+                            <mat-card-content>
+                                <div>
+                                    <img [src]="getCastMemberSmallPhotoUrl(castMember.profile_path)">
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Reviews">
+                    <div class="spacer"></div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

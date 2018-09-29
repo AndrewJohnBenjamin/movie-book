@@ -22,10 +22,10 @@
                         </mat-card>
                     </div>
                 </mat-tab>
-                <mat-tab label="Tv">
+                <mat-tab *ngIf="person.tv_credits.cast.length > 0" label="Tv">
                     <div class="spacer"></div>
                     <div class="movies-contaier">
-                        <mat-card routerLink="/tv/{{tvShow.id}}" *ngFor="let tvShow of person.tv_credits.cast">
+                        <mat-card routerLink="/tv-show/{{tvShow.id}}" *ngFor="let tvShow of person.tv_credits.cast">
                             <mat-card-content>
                                 <div>
                                     <img [src]="getSmallMoviePosterUrl(tvShow.poster_path)">
