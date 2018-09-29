@@ -7,13 +7,23 @@
     <span translate class="menu-item toolbar-item-space">DISCOVER</span>
   </div>
   <mat-form-field floatLabel="never">
-    <input matInput placeholder="Search for Movies, Tv Shows or People" class="flex">
+    <input matInput [formControl]="search" [matAutocomplete]="auto" class="flex">
+    <mat-placeholder class="placeholder">
+      <mat-icon>search</mat-icon>{{"SEARCH_PLACEHOLDER" | translate}}
+    </mat-placeholder>
+    <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
+      <mat-option *ngFor="let result of searchResults" [value]="result" [ngSwitch]="result.media_type" style="height:unset;line-height:unset">
+        <div *ngSwitchCase="'movie'">{{ result.title }}</div>
+        <div *ngSwitchCase="'tv'">{{ result.name }}</div>
+        <div *ngSwitchCase="'person'">{{ result.name }}</div>
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
   <div class="language-selections">
     <div (click)="selectLanguage('en')" [ngClass]="{'active': selectedLanguage === 'en'}">
       <span class="flex">en</span>
     </div>
-    <div (click)="selectLanguage('fr')"  [ngClass]="{'active': selectedLanguage === 'fr'}">
+    <div (click)="selectLanguage('fr')" [ngClass]="{'active': selectedLanguage === 'fr'}">
       <span class="flex">fr</span>
     </div>
   </div>

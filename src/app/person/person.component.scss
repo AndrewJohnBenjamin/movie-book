@@ -1,22 +1,19 @@
 :host {
     display: flex;
     flex: 1;
-
     h2 {
         position: absolute;
+        margin-top: 25px;
     }
-
     .person-summary {
         margin-left: 16px;
         font-style: italic;
         width: 200px;
-
         >div {
             margin-top: 16px;
             display: flex;
             flex-direction: column;
             flex: 1;
-
             label {
                 font-style: normal;
                 font-weight: bold;
@@ -30,13 +27,11 @@
         height: 278px;
         width: 200px;
         background-color: white;
-        margin-top: 60px;
+        margin-top: 80px;
     }
-
     .auto-height {
         height: auto;
     }
-
     mat-tab-group {
         margin-top: 140px;
         margin-left: 16px;

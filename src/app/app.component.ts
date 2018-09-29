@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LanguageService } from './shared/language.service';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,8 @@ export class AppComponent implements OnInit, OnDestroy {
   private languageSubscription: Subscription;
   public title = 'movie-book';
   public selectedLanguage;
+  public searchResults = [];
+  public search = new FormControl();
 
   constructor(private languageService: LanguageService, private translateService: TranslateService) {
   }

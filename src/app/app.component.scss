@@ -1,5 +1,9 @@
 mat-toolbar {
     padding: 20px 15%;
+
+    img {
+        height: 102px;
+    }
     h2 {
         outline: 0;
         cursor: pointer;
@@ -10,14 +14,18 @@ mat-toolbar {
     mat-form-field {
         width: 100%;
         margin-right: 50px;
+        font-size: 18px;
+        font-weight: normal;
         input[type="text"] {
             flex: 1;
             flex-basis: 100%;
-            ;
             padding-left: 30%;
-            font-size: 22px;
             height: 50px;
             margin-top: 40px;
+        }
+
+        mat-icon {
+            margin-right: 8px;
         }
     }
     span {
