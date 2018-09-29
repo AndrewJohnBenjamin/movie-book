@@ -1,74 +1,43 @@
 :host {
-    background-color: #333333;
     display: flex;
-    height: 200px;
-
-    .person-info-container {
-        width: 1000px;
-        height: 500px;
-        margin-left: 15%;
-
-        h2 {
-            color: white;
+    .person-summary {
+        color: white;
+        margin-top: 65px;
+        margin-left: 16px;
+        font-style: italic;
+        div {
+            margin: 5px 0px;
+            label {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                margin: 5px 0;
+            }
         }
-
-        .person-poster-pic {
-            border: 1px solid grey;
-            height: 278px;
+    }
+    .person-poster-pic {
+        border: 1px solid grey;
+        height: 278px;
+    }
+    mat-tab-group {
+        margin-top: 12px;
+        margin-left: 16px;
+        .spacer {
+            height: 16px;
         }
-
-        > div {
+        .movies-contaier {
             display: flex;
-            flex: 1;
-
-            div:first-of-type {
-                padding-left: 0px;
-            }
-
-            >div {
-            padding-left: 24px;
-
-            .summary-text {
-                color: white;
-                height:126px;
-            }
-
-            mat-tab-group {
-                margin-top: 130px;
-
-                .spacer {
-                    height: 16px;
-                }
-
-                    .movies-contaier {
+            flex-wrap: wrap;
+            mat-card {
+                padding: 0px;
+                margin: 8px;
+                mat-card-content {
+                    div {
                         display: flex;
-                        flex: 1;
-                        overflow: hidden;
-                        flex-wrap: wrap;
-
-                        mat-card {
-                            padding: 0px;
-                            margin: 8px;
-                            cursor: pointer;
-
-                                mat-card-content {
-
-                                    >div {
-                                        display: flex;
-                                        flex-direction: column;
-
-                                        img {
-                                            width: 138px;
-                                            height: 175px;
-                                        }
-
-                                        span {
-                                            margin: auto;
-                                            height: 30px;
-                                            line-height: 30px;
-                                        }
-                                }
-                            }
+                        flex-direction: column;
+                        img {
+                            width: 138px;
+                            height: 175px;
                         }
                     }
                 }
@@ -76,3 +45,67 @@
         }
     }
 }
+
+// :host {
+//     background-color: #333333;
+//     display: flex;
+//     height: 200px;
+//     .person-info-container {
+//         width: 1000px;
+//         height: 500px;
+//         margin-left: 15%;
+//         h2 {
+//             color: white;
+//         }
+//         .person-poster-pic {
+//             border: 1px solid grey;
+//             height: 278px;
+//         }
+//         > div {
+//             display: flex;
+//             flex: 1;
+//             div:first-of-type {
+//                 padding-left: 0px;
+//             }
+//             >div {
+//             padding-left: 24px;
+//             .summary-text {
+//                 color: white;
+//                 height:126px;
+//             }
+//             mat-tab-group {
+//                 margin-top: 130px;
+//                 .spacer {
+//                     height: 16px;
+//                 }
+//                     .movies-contaier {
+//                         display: flex;
+//                         flex: 1;
+//                         overflow: hidden;
+//                         flex-wrap: wrap;
+//                         mat-card {
+//                             padding: 0px;
+//                             margin: 8px;
+//                             cursor: pointer;
+//                                 mat-card-content {
+//                                     >div {
+//                                         display: flex;
+//                                         flex-direction: column;
+//                                         img {
+//                                             width: 138px;
+//                                             height: 175px;
+//                                         }
+//                                         span {
+//                                             margin: auto;
+//                                             height: 30px;
+//                                             line-height: 30px;
+//                                         }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

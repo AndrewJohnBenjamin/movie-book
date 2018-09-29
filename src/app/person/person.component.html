@@ -1,40 +1,42 @@
-<div class="person-info-container">
-    <h2>{{ person.name }}</h2>
-    <div>
-        <div>
-            <img class="person-poster-pic" [src]="getProfileImageUrl()" *ngIf="person.profile_path">
-        </div>
-        <div>
-            <mat-tab-group>
-                <mat-tab label="Biography">
-                    <div class="spacer"></div>
-                    <span>{{ person.biography }}</span>
-                </mat-tab>
-                <mat-tab label="Movies">
-                    <div class="spacer"></div>
-                    <div class="movies-contaier">
-                        <mat-card routerLink="/movie/{{movie.id}}" *ngFor="let movie of person.movie_credits.cast">
-                            <mat-card-content>
-                                <div>
-                                    <img [src]="getSmallMoviePosterUrl(movie.poster_path)">
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
-                    </div>
-                </mat-tab>
-                <mat-tab *ngIf="person.tv_credits.cast.length > 0" label="Tv">
-                    <div class="spacer"></div>
-                    <div class="movies-contaier">
-                        <mat-card routerLink="/tv-show/{{tvShow.id}}" *ngFor="let tvShow of person.tv_credits.cast">
-                            <mat-card-content>
-                                <div>
-                                    <img [src]="getSmallMoviePosterUrl(tvShow.poster_path)">
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
-                    </div>
-                </mat-tab>
-            </mat-tab-group>
-        </div>
+<div>
+    <h2 class="white-title">{{ person.name }}</h2>
+    <img class="person-poster-pic" [src]="getProfileImageUrl()" *ngIf="person.profile_path">
+</div>
+<div>
+    <div class="person-summary">
+        <div *ngIf="person.birthday"><label>Born On:</label> {{ person.birthday |
+            date : 'longDate'}}</div>
+        <div *ngIf="person.place_of_birth"><label>Birthplace:</label> {{ person.place_of_birth }}</div>
+        <div *ngIf="person.known_for_department"><label>Best Known For:</label> {{ person.known_for_department }}</div>
     </div>
+    <mat-tab-group>
+        <mat-tab label="Biography">
+            <div class="spacer"></div>
+            <span>{{ person.biography }}</span>
+        </mat-tab>
+        <mat-tab label="Movies">
+            <div class="spacer"></div>
+            <div class="movies-contaier">
+                <mat-card class="pointerCursor" routerLink="/movie/{{movie.id}}" *ngFor="let movie of person.movie_credits.cast">
+                    <mat-card-content>
+                        <div>
+                            <img [src]="getSmallMoviePosterUrl(movie.poster_path)">
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab *ngIf="person.tv_credits.cast.length > 0" label="Tv">
+            <div class="spacer"></div>
+            <div class="movies-contaier">
+                <mat-card class="pointerCursor" routerLink="/tv-show/{{tvShow.id}}" *ngFor="let tvShow of person.tv_credits.cast">
+                    <mat-card-content>
+                        <div>
+                            <img [src]="getSmallMoviePosterUrl(tvShow.poster_path)">
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>

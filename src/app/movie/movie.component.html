@@ -1,9 +1,9 @@
-<div class="movie-info-container">
-    <h2>{{ movie.title + ' (' + movie.release_date.split('-')[0] + ')' }}</h2>
-    <div>
-        <div>
-            <img class="movie-poster-pic" [src]="getMoviePosterUrl()" *ngIf="movie.poster_path">
-            <div class="movie-summary">
+<div>
+    <h2 class="white-title">{{ movie.title + ' (' + movie.release_date.split('-')[0] + ')' }}</h2>
+    <img class="movie-poster-pic" [src]="getMoviePosterUrl()" *ngIf="movie.poster_path">
+</div>
+<div>
+        <div class="movie-summary">
                 <div *ngIf="movie.release_date"><label>{{'MOVIE.RELEASED' | translate}}:</label> {{movie.release_date |
                     date : 'shortDate'}}</div>
                 <div *ngIf="movie.budget"><label>{{'MOVIE.BUDGET' | translate}}:</label> {{movie.budget | currency }}</div>
@@ -14,35 +14,33 @@
                 <div *ngIf="movie.vote_average"><label>{{'VOTE_AVERAGE' | translate}}:</label> {{movie.vote_average}}
                 </div>
                 <div *ngIf="movie.vote_count"><label>{{'VOTE_COUNT' | translate}}:</label> {{movie.vote_count}}</div>
-                <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank">{{'VISIT_HOME_PAGE' | translate}}</a>
-            </div>
-        </div>
-        <div>
-            <div class="summary-text">
             </div>
             <mat-tab-group>
-                <mat-tab label="Overview">
+                    <mat-tab label="Overview">
                         <div class="spacer"></div>
                         <span>{{ movie.overview }}</span>
-                </mat-tab>
-                <mat-tab label="Cast">
-                    <div class="spacer"></div>
-                    <div class="cast-contaier">
-                        <mat-card routerLink="/person/{{castMember.id}}" *ngFor="let castMember of movie.credits.cast">
-                            <mat-card-content>
+                    </mat-tab>
+                    <mat-tab label="Cast">
+                        <div class="spacer"></div>
+                        <div class="cast-contaier">
+                            <mat-card class="pointerCursor" routerLink="/person/{{castMember.id}}" *ngFor="let castMember of movie.credits.cast">
+                                <mat-card-content>
+                                    <div>
+                                        <img [src]="getCastMemberSmallPhotoUrl(castMember.profile_path)">
+                                        <span>{{ castMember.name }}</span>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </mat-tab>
+                    <mat-tab *ngIf="movie.reviews.results.length > 0" label="Reviews">
+                        <div class="spacer"></div>
+                        <mat-card *ngFor="let review of movie.reviews.results">
                                 <div>
-                                    <img [src]="getCastMemberSmallPhotoUrl(castMember.profile_path)">
-                                    <span>{{ castMember.name }}</span>
-                                </div>
-                            </mat-card-content>
+                                        <span class="review-content">{{'"' +  review.content + '"' }}</span>
+                                        <span class="bold">{{ '   -   ' + review.author }}</span>
+                                    </div>
                         </mat-card>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Reviews">
-                    <div class="spacer"></div>
-                    <span>{{ movie.vote_average }}</span>
-                </mat-tab>
-            </mat-tab-group>
-        </div>
-    </div>
+                    </mat-tab>
+                </mat-tab-group>
 </div>

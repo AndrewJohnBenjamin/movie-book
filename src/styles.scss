@@ -8,3 +8,20 @@ body {
     padding: 0;
     margin: 0;
 }
+
+app-root {
+    display: flex;
+    flex-direction: column;
+}
+
+.white-title {
+    color: white;
+}
+
+.pointerCursor {
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: bold;
+}

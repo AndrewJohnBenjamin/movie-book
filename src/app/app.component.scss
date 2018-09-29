@@ -52,3 +52,17 @@ mat-toolbar {
         }
     }
 }
+
+.router-outlet-container {
+    width: 1000px;
+    margin: auto;
+}
+
+.static-background {
+    position: absolute;
+    background-color: #333333;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    z-index: -1;
+}
