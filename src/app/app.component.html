@@ -3,19 +3,27 @@
   <div class="toolbar-item-space">
     <h2 routerLink="/home">MOVIE BOOK</h2>
   </div>
-  <div>
-    <span translate class="menu-item toolbar-item-space">DISCOVER</span>
-  </div>
   <mat-form-field floatLabel="never">
-    <input matInput [formControl]="search" [matAutocomplete]="auto" class="flex">
+    <input (keyup.enter)="onEnter($event)" matInput [formControl]="search" [matAutocomplete]="auto" class="flex">
     <mat-placeholder class="placeholder">
       <mat-icon>search</mat-icon>{{"SEARCH_PLACEHOLDER" | translate}}
     </mat-placeholder>
-    <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
-      <mat-option *ngFor="let result of searchResults" [value]="result" [ngSwitch]="result.media_type" style="height:unset;line-height:unset">
-        <div *ngSwitchCase="'movie'">{{ result.title }}</div>
-        <div *ngSwitchCase="'tv'">{{ result.name }}</div>
-        <div *ngSwitchCase="'person'">{{ result.name }}</div>
+    <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption [displayWith]="getSearchDisplayText">
+      <mat-option *ngFor="let result of searchResults" [value]="result" [ngSwitch]="result.media_type">
+        <div class="search-result" (keydown.enter)="onEnter(result)" *ngSwitchCase="'movie'">
+          <mat-icon *ngSwitchCase="'movie'">movie</mat-icon>
+          <div *ngSwitchCase="'movie'" class="search-result" routerLink="/movie/{{result.id}}">{{ result.title }}</div>
+        </div>
+
+        <div class="search-result" *ngSwitchCase="'tv'" (keydown.enter)="onEnter(result)">
+          <mat-icon *ngSwitchCase="'tv'">tv</mat-icon>
+          <div *ngSwitchCase="'tv'" class="search-result" routerLink="/tv-show/{{result.id}}">{{ result.name }}</div>
+        </div>
+
+        <div class="search-result" *ngSwitchCase="'person'" (keydown.enter)="onEnter(result)">
+          <mat-icon *ngSwitchCase="'person'">person</mat-icon>
+          <div *ngSwitchCase="'person'" routerLink="/person/{{result.id}}">{{ result.name }}</div>
+        </div>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>

@@ -3,6 +3,13 @@ import { LanguageService } from './shared/language.service';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
+import { TmdbService } from './data-services/tmdb.service';
+import { GenericSearchResults } from './models/GenericSearchResult';
+import { MovieSearchResult } from './models/MovieSearchResult.model';
+import { PersonSearchResult } from './models/PersonSearchResult.model';
+import { TvShowSearchResult } from './models/TvShowSearchResult.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +18,16 @@ import { FormControl } from '@angular/forms';
 })
 export class AppComponent implements OnInit, OnDestroy {
   private languageSubscription: Subscription;
+  private valueChangesSubscription: Subscription;
   public title = 'movie-book';
   public selectedLanguage;
   public searchResults = [];
   public search = new FormControl();
 
-  constructor(private languageService: LanguageService, private translateService: TranslateService) {
+  constructor(private languageService: LanguageService,
+    private translateService: TranslateService,
+    private tmdbService: TmdbService,
+    private router: Router) {
   }
 
   /**
@@ -34,18 +45,55 @@ export class AppComponent implements OnInit, OnDestroy {
     if (this.languageSubscription) {
       this.languageSubscription.unsubscribe();
     }
+
+    if (this.valueChangesSubscription) {
+      this.valueChangesSubscription.unsubscribe();
+    }
   }
 
   /**
    * angular onInit lifecycle hook
    */
-  ngOnInit(): void {
+  public ngOnInit(): void {
     const defaultLanguage = this.languageService.getLanguageFromLocalStorage();
     this.selectedLanguage = defaultLanguage;
     this.translateService.setDefaultLang(defaultLanguage);
 
     this.languageSubscription = this.languageService.currentlySelectedLanguage.subscribe(() => {
       window.location.reload();
+    });
+
+    this.valueChangesSubscription = this.search.valueChanges.pipe(
+      debounceTime(300)
+    ).subscribe((searchText: string) => {
+      if (searchText.length > 0) {
+        this.executeSearch(searchText);
+      } else {
+        this.searchResults = [];
+      }
+    });
+  }
+
+  public onEnter() {
+
+    this.router.navigateByUrl(`/${this.search.value.media_type}/${this.search.value.id}`);
+  }
+
+  public getSearchDisplayText(searchResult: MovieSearchResult | PersonSearchResult | TvShowSearchResult) {
+    if (!searchResult) {
+      return;
+    }
+
+    return (<PersonSearchResult>searchResult).name ? (<PersonSearchResult>searchResult).name : (<MovieSearchResult>searchResult).title;
+  }
+
+  /**
+   * A method that executes a search against the tmdb api for movies, tv shows and people
+   * @param searchTerm the term to use to query the api with
+   */
+  private executeSearch(searchText: string) {
+    this.tmdbService.executeSearch(searchText).toPromise().then((response: GenericSearchResults) => {
+      this.searchResults = response.results;
     });
   }
 }
