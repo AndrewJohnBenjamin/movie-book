@@ -6,8 +6,6 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-
-
 export class UrlService {
   public apiConfig: ApiConfig;
   private defaultPersonPhotoUrl = '/assets/images/default-photo.png';
@@ -16,46 +14,58 @@ export class UrlService {
   constructor(private http: HttpClient) {
   }
 
+  /**
+   * A method that retrieves the base api config that contains image url information
+   */
   public getBaseConfig() {
-      return this.http.get(`https://api.themoviedb.org/3/configuration?api_key=${environment.apiKey}`)
-        .toPromise().then((apiConfig: ApiConfig) => {
-          this.apiConfig = apiConfig;
-        });
+    return this.http.get(`https://api.themoviedb.org/3/configuration?api_key=${environment.apiKey}`)
+      .toPromise().then((apiConfig: ApiConfig) => {
+        this.apiConfig = apiConfig;
+      });
   }
 
-  public getSearchResultImageUrl = (imagePath: string) => {
-    return `${this.apiConfig.images.base_url}w92/${imagePath}`;
-  }
-
-  public getMoviePosterUrl = (imagePath: string) => {
-    if (!imagePath) {
+  /**
+   * A method that retrieves a movie poster image url
+   * @param fileName the name of the image file to retrieve the url for
+   */
+  public getMoviePosterUrl(fleName: string) {
+    if (!fleName) {
       return this.defaultMovieAndTvPhotoUrl;
     }
 
-    return `${this.apiConfig.images.base_url}w185/${imagePath}`;
+    return `${this.apiConfig.images.base_url}w185/${fleName}`;
   }
 
-  public getBackdropUrl = (imagePath: string) => {
-    return `${this.apiConfig.images.base_url}w1280/${imagePath}`;
-  }
-
-  public getPersonProfileUrl = (imagePath: string) => {
-    if (!imagePath) {
+  /**
+ * A method that retrieves a persons profile picture url
+ * @param fileName the name of the image file to retrieve the url for
+ */
+  public getPersonProfileUrl(fileName: string) {
+    if (!fileName) {
       return this.defaultPersonPhotoUrl;
     }
 
-    return `${this.apiConfig.images.base_url}w185/${imagePath}`;
+    return `${this.apiConfig.images.base_url}w185/${fileName}`;
   }
 
-  public getCastProfileUrl = (imagePath: string) => {
-    if (!imagePath) {
+  /**
+* A method that retrieves a cast member image url
+* @param fileName the name of the image file to retrieve the url for
+*/
+  public getCastProfileUrl(fileName: string) {
+    if (!fileName) {
       return this.defaultPersonPhotoUrl;
     }
 
-    return `${this.apiConfig.images.base_url}w138_and_h175_face/${imagePath}`;
+    return `${this.apiConfig.images.base_url}w138_and_h175_face/${fileName}`;
   }
 
-  public getHomePageItemUrl = (imagePath: string, size: string) => {
-    return `${this.apiConfig.images.base_url}${size}/${imagePath}`;
+    /**
+* A method that retrieves an image for the home page of the app
+* @param fileName the name of the image file to retrieve the url for
+* @param size the size of the image to retrieve
+*/
+  public getHomePageItemUrl(fileName: string, size: string) {
+    return `${this.apiConfig.images.base_url}${size}/${fileName}`;
   }
 }

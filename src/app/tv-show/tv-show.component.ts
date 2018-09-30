@@ -13,7 +13,6 @@ export class TvShowComponent implements OnInit {
   public tvShow: TvShow;
 
   constructor(private route: ActivatedRoute, private urlService: UrlService) {
-
   }
 
   public getCastMemberSmallPhotoUrl(imageName: string) {

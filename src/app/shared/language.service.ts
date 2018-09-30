@@ -5,16 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root'
 })
-
-/**
- * A class that provides methods for the management of language selection
- */
 export class LanguageService {
   public currentlySelectedLanguage: Subject<string> = new Subject<string>();
 
-  constructor(
-    private translate: TranslateService
-  ) {
+  constructor(private translate: TranslateService) {
     this.currentlySelectedLanguage.next(this.getLanguageFromLocalStorage());
   }
 

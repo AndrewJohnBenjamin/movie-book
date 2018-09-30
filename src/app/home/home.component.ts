@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   public onAirTvShows: Array<TvShow> = [];
 
   constructor(private route: ActivatedRoute, private urlService: UrlService) {
-
   }
 
   /**

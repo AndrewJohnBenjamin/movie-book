@@ -18,10 +18,18 @@ export class EntertainmentTileComponent implements OnInit {
 
   constructor(private urlService: UrlService) { }
 
+  /**
+   * A method that retrieves the supplied image in the supplied size
+   * @param fileName the name of the image to retrieve
+   * @param size the size of the image to retrieve
+   */
   public getImage(fileName: string, size: string) {
     return this.urlService.getHomePageItemUrl(fileName, size);
   }
 
+  /**
+   * angular init lifecycle hook
+   */
   public ngOnInit() {
   }
 }

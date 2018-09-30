@@ -4,23 +4,23 @@
     <h2 routerLink="/home" translate>SITE_NAME</h2>
   </div>
   <mat-form-field floatLabel="never">
-    <input (keyup.enter)="onEnter($event)" matInput [formControl]="search" [matAutocomplete]="auto">
+    <input (keyup.enter)="onEnterPressedOnSearchItem($event)" matInput [formControl]="search" [matAutocomplete]="auto">
     <mat-placeholder class="placeholder">
       <mat-icon>search</mat-icon>{{"SEARCH_PLACEHOLDER" | translate}}
     </mat-placeholder>
     <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption [displayWith]="getSearchDisplayText">
       <mat-option *ngFor="let result of searchResults" [value]="result" [ngSwitch]="result.media_type">
-        <div class="search-result" (keydown.enter)="onEnter(result)" *ngSwitchCase="'movie'">
+        <div class="search-result" (keydown.enter)="onEnterPressedOnSearchItem(result)" *ngSwitchCase="'movie'">
           <mat-icon *ngSwitchCase="'movie'">movie</mat-icon>
           <div *ngSwitchCase="'movie'" class="search-result" routerLink="/movie/{{result.id}}">{{ result.title }}</div>
         </div>
 
-        <div class="search-result" *ngSwitchCase="'tv'" (keydown.enter)="onEnter(result)">
+        <div class="search-result" *ngSwitchCase="'tv'" (keydown.enter)="onEnterPressedOnSearchItem(result)">
           <mat-icon *ngSwitchCase="'tv'">tv</mat-icon>
           <div *ngSwitchCase="'tv'" class="search-result" routerLink="/tv/{{result.id}}">{{ result.name }}</div>
         </div>
 
-        <div class="search-result" *ngSwitchCase="'person'" (keydown.enter)="onEnter(result)">
+        <div class="search-result" *ngSwitchCase="'person'" (keydown.enter)="onEnterPressedOnSearchItem(result)">
           <mat-icon *ngSwitchCase="'person'">person</mat-icon>
           <div *ngSwitchCase="'person'" routerLink="/person/{{result.id}}">{{ result.name }}</div>
         </div>

@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntertainmentTileComponent } from './entertainment-tile.component';
+// import { EntertainmentTileComponent } from './entertainment-tile.component';
 
-describe('EntertainmentTileComponent', () => {
-  let component: EntertainmentTileComponent;
-  let fixture: ComponentFixture<EntertainmentTileComponent>;
+// describe('EntertainmentTileComponent', () => {
+//   let component: EntertainmentTileComponent;
+//   let fixture: ComponentFixture<EntertainmentTileComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ EntertainmentTileComponent ]
-    })
-    .compileComponents();
-  }));
+//   beforeEach(async(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [ EntertainmentTileComponent ]
+//     })
+//     .compileComponents();
+//   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(EntertainmentTileComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(EntertainmentTileComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

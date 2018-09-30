@@ -15,10 +15,17 @@ export class MovieComponent implements OnInit {
 
   }
 
+  /**
+   * A method that retrieves a small image of a cast member
+   * @param imageName the name of the image to retrieve
+   */
   public getCastMemberSmallPhotoUrl(imageName: string) {
     return this.urlService.getCastProfileUrl(imageName);
   }
 
+  /**
+   * A method that retrieves a poster
+   */
   public getMoviePosterUrl() {
     return this.urlService.getMoviePosterUrl(this.movie.poster_path);
   }

@@ -74,11 +74,17 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  public onEnter() {
-
+  /**
+   * A method that handles the event where a search item was selected by pressing the enter key
+   */
+  public onEnterPressedOnSearchItem() {
     this.router.navigateByUrl(`/${this.search.value.media_type}/${this.search.value.id}`);
   }
 
+  /**
+   * A method that returns the text for a currently selected search item
+   * @param searchResult the currently selected search result
+   */
   public getSearchDisplayText(searchResult: MovieSearchResult | PersonSearchResult | TvShowSearchResult) {
     if (!searchResult) {
       return;

@@ -17,7 +17,6 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material';
-import { APIRequestInterceptorService } from './shared/api-request-interceptor.service';
 import { MovieModule } from './movie/movie.module';
 import { TvShowModule } from './tv-show/tv-show.module';
 import { PersonModule } from './person/person.module';
@@ -58,8 +57,7 @@ export function urlInitializationProvider(urlService: UrlService) {
     })
   ],
   providers: [
-    { provide: APP_INITIALIZER, useFactory: urlInitializationProvider, deps: [UrlService], multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: APIRequestInterceptorService, multi: true }
+    { provide: APP_INITIALIZER, useFactory: urlInitializationProvider, deps: [UrlService], multi: true }
   ],
   bootstrap: [AppComponent]
 })
