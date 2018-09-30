@@ -2,17 +2,17 @@
     <h2>{{ person.name }}</h2>
     <img [ngClass]="{'auto-height': !person.poster_path}" class="poster-pic" [src]="getProfileImageUrl()">
     <div class="summary">
-        <div>
+        <div *ngIf="person.birthday">
             <label translate>PERSON.BORN_ON</label>
-            <div *ngIf="person.birthday">{{ person.birthday | date : 'longDate'}}</div>
+            <div>{{ person.birthday | date : 'longDate'}}</div>
         </div>
-        <div>
+        <div *ngIf="person.place_of_birth">
             <label translate>PERSON.BIRTHPLACE</label>
-            <div *ngIf="person.place_of_birth">{{ person.place_of_birth }}</div>
+            <div>{{ person.place_of_birth }}</div>
         </div>
-        <div>
+        <div *ngIf="person.known_for_department">
             <label translate>PERSON.BEST_KNOWN_FOR</label>
-            <div *ngIf="person.known_for_department">{{ person.known_for_department }}</div>
+            <div>{{ person.known_for_department }}</div>
         </div>
     </div>
 </div>

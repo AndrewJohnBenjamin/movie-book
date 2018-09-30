@@ -2,21 +2,21 @@
     <h2>{{ tvShow.name + ' (' + tvShow.first_air_date.split('-')[0] + ')'}}</h2>
     <img [ngClass]="{'auto-height': !tvShow.poster_path}" class="poster-pic" [src]="getTvShowPosterUrl()">
     <div class="summary">
-        <div>
+        <div *ngIf="tvShow.first_air_date">
             <label translate>MOVIE.RELEASED</label>
-            <div *ngIf="tvShow.first_air_date">{{tvShow.first_air_date | date : 'longDate'}}</div>
+            <div>{{tvShow.first_air_date | date : 'longDate'}}</div>
         </div>
-        <div>
+        <div *ngIf="tvShow.number_of_seasons">
             <label translate>TV.NUMBER_OF_SEASONS</label>
-            <div *ngIf="tvShow.number_of_seasons">{{ tvShow.number_of_seasons }}</div>
+            <div>{{ tvShow.number_of_seasons }}</div>
         </div>
-        <div>
+        <div *ngIf="tvShow.next_episode_to_air">
             <label translate>TV.FIRST_AIR_DATE</label>
-            <div *ngIf="tvShow.next_episode_to_air">{{ tvShow.next_episode_to_air.air_date | date : 'longDate' }}</div>
+            <div>{{ tvShow.next_episode_to_air.air_date | date : 'longDate' }}</div>
         </div>
-        <div>
+        <div *ngIf="tvShow.vote_average">
             <label translate>AVERAGE_VOTE</label>
-            <div *ngIf="tvShow.vote_average">{{ tvShow.vote_average}}</div>
+            <div>{{ tvShow.vote_average}}</div>
         </div>
     </div>
 </div>

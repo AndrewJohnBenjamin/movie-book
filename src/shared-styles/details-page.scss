@@ -1,6 +1,7 @@
 @import '../palette.sass';
 @mixin details-page() {
     :host {
+        height: 100%;
         display: flex;
         flex: 1;
         h2 {
@@ -38,10 +39,14 @@
         mat-tab-group {
             margin-top: 140px;
             margin-left: 16px;
+            height: calc(100% - 250px);
             .spacer {
                 height: 16px;
             }
-            .card-list-contaier {
+            .review-content{
+                font-style: italic;
+             }
+             .card-list-contaier {
                 display: flex;
                 flex-wrap: wrap;
                 mat-card {
