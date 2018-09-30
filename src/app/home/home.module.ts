@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
-
 import { HomeComponent } from './home.component';
+import { EntertainmentTileModule } from '../shared/entertainment-tile/entertainment-tile.module';
 
 @NgModule({
   imports: [
@@ -13,7 +13,8 @@ import { HomeComponent } from './home.component';
     MatInputModule,
     MatIconModule,
     TranslateModule,
-    RouterModule
+    RouterModule,
+    EntertainmentTileModule
   ],
   declarations: [
     HomeComponent

@@ -18,15 +18,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-  public getImageSize(index: number) {
-    return index > 0 ? '' : 'w1000_and_h563_face';
-  }
-
-
-  public getImage = (fileName: string, size: string) => {
-    return this.urlService.getHomePageItemUrl(fileName, size);
-  }
-
   /**
    * Angular onInit lifecycle hook
    */

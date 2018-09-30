@@ -21,7 +21,6 @@ import { APIRequestInterceptorService } from './shared/api-request-interceptor.s
 import { MovieModule } from './movie/movie.module';
 import { TvShowModule } from './tv-show/tv-show.module';
 import { PersonModule } from './person/person.module';
-import { DiscoverModule } from './discover/discover.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function urlInitializationProvider(urlService: UrlService) {
@@ -50,7 +49,6 @@ export function urlInitializationProvider(urlService: UrlService) {
     MovieModule,
     TvShowModule,
     PersonModule,
-    DiscoverModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

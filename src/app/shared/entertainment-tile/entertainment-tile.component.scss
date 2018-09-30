@@ -1,0 +1,89 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    input[type="text"] {
+        flex: 1;
+        padding-left: 30%;
+        font-size: 22px;
+        height: 50px;
+        margin-top: 40px;
+    }
+    h2 {
+        padding-left: 32px;
+    }
+    .small-tile-info {
+        background-color: white;
+        color: black;
+        z-index: 1;
+        height: 35px;
+        position: absolute;
+        width: 242px;
+        margin-top: 103px;
+        margin-left: 1px;
+        padding-left: 8px;
+        opacity: 0.8;
+        font-size: 14px;
+        padding-top: 5px;
+    }
+    .no-top-margin {
+        margin-top: 1px;
+    }
+    .large-tile-info {
+        background-color: white;
+        color: black;
+        z-index: 1;
+        height: 70px;
+        position: absolute;
+        width: 494px;
+        margin-top: 212px;
+        margin-left: 1px;
+        padding-left: 8px;
+        opacity: 0.8;
+        font-size: 13px;
+        div {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            height: 30px;
+            padding: 0px 18px;
+        }
+        div:first-of-type {
+            height: auto;
+            margin-bottom: 8px;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+    }
+    .latest-entertainment-container {
+        display: flex;
+        width: 1000px;
+        height: 500px;
+        margin: auto;
+        margin-top: 20px;
+        cursor: pointer;
+        .on-air-container {
+            flex-direction: column;
+            display: flex;
+        }
+        .in-theatres-container {
+            flex-direction: column;
+            display: flex;
+            .large-tile {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .poster {
+            width: 502px;
+            height: 281px;
+            border: 1px solid #333333;
+        }
+        .inline-images {
+            display: flex;
+            img {
+                width: 250px;
+                height: 143px;
+                border: 1px solid #333333;
+            }
+        }
+    }
+}
