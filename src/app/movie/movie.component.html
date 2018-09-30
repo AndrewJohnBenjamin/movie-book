@@ -1,46 +1,46 @@
 <div>
-    <h2 class="white-title">{{ movie.title + ' (' + movie.release_date.split('-')[0] + ')' }}</h2>
-    <img [ngClass]="{'auto-height': !movie.poster_path}" class="movie-poster-pic" [src]="getMoviePosterUrl()">
-    <div class="movie-summary">
+    <h2>{{ movie.title + ' (' + movie.release_date.split('-')[0] + ')' }}</h2>
+    <img [ngClass]="{'auto-height': !movie.poster_path}" class="poster-pic" [src]="getMoviePosterUrl()">
+    <div class="summary">
         <div *ngIf="movie.release_date">
-            <label>{{'MOVIE.RELEASED' | translate}}:</label>
+            <label translate>MOVIE.RELEASED</label>
             <div>{{movie.release_date |
                 date : 'longDate'}}</div>
         </div>
         <div *ngIf="movie.budget">
-            <label>{{'MOVIE.BUDGET' | translate}}:</label>
+            <label translate>MOVIE.BUDGET</label>
             <div>{{movie.budget | currency }}</div>
         </div>
         <div *ngIf="movie.runtime">
-            <label>{{'MOVIE.RUNTIME' | translate}}:</label>
+            <label translate>MOVIE.RUNTIME</label>
             <div>{{movie.runtime}}
                 {{'MINUTES' |
                 translate}}</div>
         </div>
         <div *ngIf="movie.popularity">
-            <label>{{'POPULARITY' | translate}}:</label>
+            <label translate>POPULARITY</label>
             <div>{{movie.popularity}} </div>
         </div>
         <div *ngIf="movie.vote_average">
-            <label>{{'VOTE_AVERAGE' | translate}}:</label>
+            <label translate>AVERAGE_VOTE</label>
             <div>{{movie.vote_average}}
             </div>
         </div>
         <div *ngIf="movie.vote_count">
-            <label>{{'VOTE_COUNT' | translate}}:</label>
+            <label translate>VOTE_COUNT</label>
             <div>{{movie.vote_count}}</div>
         </div>
     </div>
 </div>
 <div>
     <mat-tab-group>
-        <mat-tab label="Overview">
+        <mat-tab label="{{ 'OVERVIEW' | translate }}">
             <div class="spacer"></div>
             <span>{{ movie.overview }}</span>
         </mat-tab>
-        <mat-tab label="Cast">
+        <mat-tab label="{{ 'CAST' | translate }}">
             <div class="spacer"></div>
-            <div class="cast-contaier">
+            <div class="card-list-contaier">
                 <mat-card class="pointerCursor" routerLink="/person/{{castMember.id}}" *ngFor="let castMember of movie.credits.cast">
                     <mat-card-content>
                         <div>
@@ -51,7 +51,7 @@
                 </mat-card>
             </div>
         </mat-tab>
-        <mat-tab *ngIf="movie.reviews.results.length > 0" label="Latest Reviews">
+        <mat-tab *ngIf="movie.reviews.results.length > 0" label="{{ 'REVIEWS' | translate }}">
             <div class="spacer"></div>
             <mat-card *ngFor="let review of movie.reviews.results">
                 <div>

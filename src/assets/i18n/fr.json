@@ -1,54 +1,32 @@
 {
-  "WELCOME": "Croeso I Moooovie Book!",
-  "FOOTER_MESSAGE": "This product uses the TMDb API but is not endorsed or certified by",
-  "CAST": "Cast",
-  "OVERVIEW": "Overview",
-  "IN": "In",
-  "SEARCH_PLACEHOLDER": "Search for an Actor, Actress or Movie...",
-  "DISCOVER": "DISCOVER",
-  "MOVIES": "MOVIES",
-  "TV_SHOWS": "TV SHOWS",
-  "PEOPLE": "PEOPLE",
-  "LANGUAGE": {
-    "EN": "English",
-    "DE": "German"
-  },
-  "TRENDING": {
-    "MOVIES_HEADING": "Trending Movies (last 7 days)",
-    "SHOWS_HEADING": "Trending Shows (last 7 days)"
-  },
+  "SITE_NAME": "LIVRE DE CINÉMA",
+  "CAST": "JETER",
+  "OVERVIEW": "SURVOL",
+  "REVIEWS": "AVIS",
+  "SEARCH_PLACEHOLDER": "Rechercher un acteur, une actrice ou un film ...",
+  "MOVIES": "CINÉMA",
+  "TV_SHOWS": "Émissions de télévision",
+  "IN_THEATRES": "Dans les théâtres",
+  "ON_TV": "C'est la télé",
   "MOVIE": {
-    "RELEASED": "Released",
-    "BUDGET": "Budget",
-    "RUNTIME": "Runtime"
+    "RELEASED": "Libéré",
+    "BUDGET": "Coût",
+    "RUNTIME": "Longueur"
   },
   "PERSON": {
-    "BIOGRAPHY": "Biography",
-    "BORN": "Born",
+    "BIOGRAPHY": "la biographie",
+    "BORN_ON": "Né sur",
     "DIED": "Died on",
-    "PLACE_OF_BIRTH": "Place of Birth",
-    "MOVIE_APPEARANCES": "Movie Appearances",
-    "TV_APPEARANCES": "TV Appearances",
-    "IMDB_PROFILE": "View IMDB Profile",
-    "BEST_KNOWN_FOR": "Best Known For"
+    "BIRTHPLACE": "Lieu de naissance",
+    "BEST_KNOWN_FOR": "Plus connu pour"
   },
-  "TV_SHOW": {
-    "SEASONS": "Seasons",
+  "TV": {
+    "NUMBER_OF_SEASONS": "Nombre de saisons",
     "EPISODES": "Episodes",
-    "STATUS": "Status",
-    "FIRST_AIR_DATE": "First Air Date",
-    "LAST_AIR_DATE": "Last Air Date"
+    "FIRST_AIR_DATE": "Date de première diffusion"
   },
-  "GENRES": "Genres",
-  "MINUTES": "Minutes",
-  "POPULARITY": "Popularity",
-  "VOTE_COUNT": "Vote Count",
-  "VOTE_AVERAGE": "Vote Average",
-  "VISIT_HOME_PAGE": "Visit Home Page",
-  "PAGE": "Page",
-  "OF": "of",
-  "BUTTON_ACTIONS": {
-    "CLEAR": "Clear",
-    "SEARCH": "Search"
-  }
+  "POPULARITY": "Popularité",
+  "VOTE_COUNT": "Nombre de votes",
+  "AVERAGE_VOTE": "Vote moyen",
+  "VISIT_HOME_PAGE": "Visit Home Page"
 }

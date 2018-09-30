@@ -5,7 +5,7 @@ import { TvShowResolver } from './tv-show.resolver';
 
 const routes: Routes = [
   {
-    path: 'tv-show/:id',
+    path: 'tv/:id',
     component: TvShowComponent,
     resolve: {
       tvShow: TvShowResolver

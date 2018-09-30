@@ -1,22 +1,14 @@
 {
-  "WELCOME": "Welcome to Movie Book!!",
+  "SITE_NAME": "MOVIE BOOK",
   "FOOTER_MESSAGE": "This product uses the TMDb API but is not endorsed or certified by",
-  "CAST": "Cast",
-  "OVERVIEW": "Overview",
-  "IN": "In",
+  "CAST": "CAST",
+  "OVERVIEW": "OVERVIEW",
+  "REVIEWS": "REVIEWS",
   "SEARCH_PLACEHOLDER": "Search for an Actor, Actress or Movie...",
   "DISCOVER": "DISCOVER",
   "MOVIES": "MOVIES",
   "TV_SHOWS": "TV SHOWS",
   "PEOPLE": "PEOPLE",
-  "LANGUAGE": {
-    "EN": "English",
-    "DE": "German"
-  },
-  "TRENDING": {
-    "MOVIES_HEADING": "Trending Movies (last 7 days)",
-    "SHOWS_HEADING": "Trending Shows (last 7 days)"
-  },
   "IN_THEATRES": "In Theatres",
   "ON_TV": "On Tv",
   "MOVIE": {
@@ -26,16 +18,15 @@
   },
   "PERSON": {
     "BIOGRAPHY": "Biography",
-    "BORN": "Born",
-    "DIED": "Died on",
-    "PLACE_OF_BIRTH": "Place of Birth",
+    "BORN_ON": "Born On",
+    "BIRTHPLACE": "Birthplace",
     "MOVIE_APPEARANCES": "Movie Appearances",
     "TV_APPEARANCES": "TV Appearances",
     "IMDB_PROFILE": "View IMDB Profile",
     "BEST_KNOWN_FOR": "Best Known For"
   },
-  "TV_SHOW": {
-    "SEASONS": "Seasons",
+  "TV": {
+    "NUMBER_OF_SEASONS": "Number Of Seasons",
     "EPISODES": "Episodes",
     "STATUS": "Status",
     "FIRST_AIR_DATE": "First Air Date",
@@ -45,7 +36,7 @@
   "MINUTES": "Minutes",
   "POPULARITY": "Popularity",
   "VOTE_COUNT": "Vote Count",
-  "VOTE_AVERAGE": "Vote Average",
+  "AVERAGE_VOTE": "Average Vote",
   "VISIT_HOME_PAGE": "Visit Home Page",
   "PAGE": "Page",
   "OF": "of",

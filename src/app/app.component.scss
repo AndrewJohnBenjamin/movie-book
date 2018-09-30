@@ -1,84 +1,86 @@
-    .search-result {
-        height: 30px;
-        line-height: 30px;
-        font-size: 16px;
-        display: flex;
-    }
+   @import '../palette.sass';
+   .search-result {
+       height: 30px;
+       line-height: 30px;
+       font-size: 16px;
+       display: flex;
+   }
 
-    mat-toolbar {
-        padding: 20px 15%;
-        img {
-            height: 102px;
-        }
-        h2 {
-            outline: 0;
-            cursor: pointer;
-        }
-        .toolbar-item-space {
-            margin-right: 32px;
-        }
-        mat-form-field {
-            width: 100%;
-            margin-right: 50px;
-            font-size: 18px;
-            font-weight: normal;
-            input[type="text"] {
-                flex: 1;
-                flex-basis: 100%;
-                padding-left: 30%;
-                height: 50px;
-                margin-top: 40px;
-            }
-            mat-icon {
-                margin-right: 8px;
-            }
-        }
-        span {
-            font-size: 25px;
-        }
-        .flex {
-            flex-basis: 100%;
-        }
-        .menu-item {
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-selections {
-            text-align: right;
-            display: flex;
-            .active {
-                background: orange;
-                color: black;
-            }
-            div {
-                border: 1px solid white;
-                padding: 5px;
-                border-radius: 30%;
-                width: 20px;
-                line-height: 20px;
-                display: inline-flex;
-                cursor: pointer;
-                &:first-of-type {
-                    margin-right: 8px;
-                }
-                >span {
-                    text-align: center;
-                    font-size: 14px;
-                }
-            }
-        }
-    }
+   mat-toolbar {
+       padding: 20px 15%;
+       img {
+           height: 102px;
+       }
+       h2 {
+           outline: 0;
+           cursor: pointer;
+       }
+       .toolbar-item-space {
+           margin-right: 32px;
+       }
+       mat-form-field {
+           width: 100%;
+           margin-right: 50px;
+           font-size: 18px;
+           font-weight: normal;
+           input[type="text"] {
+               flex: 1;
+               flex-basis: 100%;
+               padding-left: 30%;
+               height: 50px;
+               margin-top: 40px;
+           }
+           mat-icon {
+               margin-right: 8px;
+           }
+       }
+       span {
+           font-size: 25px;
+       }
+       .flex {
+           flex-basis: 100%;
+       }
+       .menu-item {
+           font-size: 14px;
+           cursor: pointer;
+       }
+       .language-selections {
+           text-align: right;
+           display: flex;
+           .active {
+               background: $accent-color;
+               color: $primary-text-color;
+           }
+           div {
+               border: 1px solid $secondary-text-color;;
+               padding: 5px;
+               border-radius: 30%;
+               width: 20px;
+               line-height: 20px;
+               display: inline-flex;
+               cursor: pointer;
+               &:first-of-type {
+                   margin-right: 8px;
+               }
+               >span {
+                   text-align: center;
+                   font-size: 14px;
+                   flex: 1;
+               }
+           }
+       }
+   }
 
-    .router-outlet-container {
-        width: 1000px;
-        margin: auto;
-    }
+   .router-outlet-container {
+       width: 1000px;
+       margin: auto;
+   }
 
-    .static-background {
-        position: absolute;
-        background-color: #333333;
-        display: flex;
-        height: 200px;
-        width: 100%;
-        z-index: -1;
-    }
+   .static-background {
+       position: absolute;
+       background-color: #333333;
+       display: flex;
+       height: 200px;
+       width: 100%;
+       z-index: -1;
+   }

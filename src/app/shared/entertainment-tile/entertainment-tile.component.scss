@@ -1,3 +1,4 @@
+@import '../../../palette.sass';
 :host {
     display: flex;
     flex-direction: column;
@@ -10,10 +11,11 @@
     }
     h2 {
         padding-left: 32px;
+        color: $secondary-text-color;
     }
     .small-tile-info {
-        background-color: white;
-        color: black;
+        background-color: $secondary-text-color;
+        color: $primary-text-color;
         z-index: 1;
         height: 35px;
         position: absolute;
@@ -29,8 +31,8 @@
         margin-top: 1px;
     }
     .large-tile-info {
-        background-color: white;
-        color: black;
+        background-color: $secondary-text-color;
+        color: $primary-text-color;
         z-index: 1;
         height: 70px;
         position: absolute;

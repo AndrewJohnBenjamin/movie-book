@@ -1,30 +1,30 @@
 <div>
-    <h2 class="white-title">{{ person.name }}</h2>
-    <img [ngClass]="{'auto-height': !person.poster_path}" class="person-poster-pic" [src]="getProfileImageUrl()">
-    <div class="person-summary">
+    <h2>{{ person.name }}</h2>
+    <img [ngClass]="{'auto-height': !person.poster_path}" class="poster-pic" [src]="getProfileImageUrl()">
+    <div class="summary">
         <div>
-            <label>Born On:</label>
+            <label translate>PERSON.BORN_ON</label>
             <div *ngIf="person.birthday">{{ person.birthday | date : 'longDate'}}</div>
         </div>
         <div>
-            <label>Birthplace:</label>
+            <label translate>PERSON.BIRTHPLACE</label>
             <div *ngIf="person.place_of_birth">{{ person.place_of_birth }}</div>
         </div>
         <div>
-            <label>Best Known For:</label>
+            <label translate>PERSON.BEST_KNOWN_FOR</label>
             <div *ngIf="person.known_for_department">{{ person.known_for_department }}</div>
         </div>
     </div>
 </div>
-<div class="flex">
+<div>
     <mat-tab-group>
-        <mat-tab label="Biography">
+        <mat-tab label="{{'PERSON.BIOGRAPHY' | translate }}">
             <div class="spacer"></div>
             <span>{{ person.biography }}</span>
         </mat-tab>
-        <mat-tab label="Movies">
+        <mat-tab label="{{'MOVIES' | translate }}">
             <div class="spacer"></div>
-            <div class="movies-contaier">
+            <div class="card-list-contaier">
                 <mat-card class="pointerCursor" routerLink="/movie/{{movie.id}}" *ngFor="let movie of person.movie_credits.cast">
                     <mat-card-content>
                         <div>
@@ -35,10 +35,10 @@
                 </mat-card>
             </div>
         </mat-tab>
-        <mat-tab *ngIf="person.tv_credits.cast.length > 0" label="Tv">
+        <mat-tab *ngIf="person.tv_credits.cast.length > 0" label="{{'TV_SHOWS' | translate }}">
             <div class="spacer"></div>
-            <div class="movies-contaier">
-                <mat-card class="pointerCursor" routerLink="/tv-show/{{tvShow.id}}" *ngFor="let tvShow of person.tv_credits.cast">
+            <div class="card-list-contaier">
+                <mat-card class="pointerCursor" routerLink="/tv/{{tvShow.id}}" *ngFor="let tvShow of person.tv_credits.cast">
                     <mat-card-content>
                         <div>
                             <img [ngClass]="{'default-pic': !tvShow.poster_path}" [src]="getSmallMoviePosterUrl(tvShow.poster_path)">

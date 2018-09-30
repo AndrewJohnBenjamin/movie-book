@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
-  <img src="../assets/images/movie-book-logo-medium.png">
+  <img routerLink="/home" class="pointerCursor" src="../assets/images/movie-book-logo-medium.png">
   <div class="toolbar-item-space">
-    <h2 routerLink="/home">MOVIE BOOK</h2>
+    <h2 routerLink="/home" translate>SITE_NAME</h2>
   </div>
   <mat-form-field floatLabel="never">
-    <input (keyup.enter)="onEnter($event)" matInput [formControl]="search" [matAutocomplete]="auto" class="flex">
+    <input (keyup.enter)="onEnter($event)" matInput [formControl]="search" [matAutocomplete]="auto">
     <mat-placeholder class="placeholder">
       <mat-icon>search</mat-icon>{{"SEARCH_PLACEHOLDER" | translate}}
     </mat-placeholder>
@@ -17,7 +17,7 @@
 
         <div class="search-result" *ngSwitchCase="'tv'" (keydown.enter)="onEnter(result)">
           <mat-icon *ngSwitchCase="'tv'">tv</mat-icon>
-          <div *ngSwitchCase="'tv'" class="search-result" routerLink="/tv-show/{{result.id}}">{{ result.name }}</div>
+          <div *ngSwitchCase="'tv'" class="search-result" routerLink="/tv/{{result.id}}">{{ result.name }}</div>
         </div>
 
         <div class="search-result" *ngSwitchCase="'person'" (keydown.enter)="onEnter(result)">
@@ -29,10 +29,10 @@
   </mat-form-field>
   <div class="language-selections">
     <div (click)="selectLanguage('en')" [ngClass]="{'active': selectedLanguage === 'en'}">
-      <span class="flex">en</span>
+      <span>en</span>
     </div>
     <div (click)="selectLanguage('fr')" [ngClass]="{'active': selectedLanguage === 'fr'}">
-      <span class="flex">fr</span>
+      <span>fr</span>
     </div>
   </div>
 </mat-toolbar>
