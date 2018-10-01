@@ -1,9 +1,10 @@
 # MovieBook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
-Welcome to the movie book. A web interface into the public [TMDB Api](https://www.themoviedb.org/documentation/api?language=en-US). The interface allows for searching for movies, tv shows and people and also allows being able to browse content relevant to that person/Tv show/movie.
+Welcome to the movie book! A web interface into the public [TMDB Api](https://www.themoviedb.org/documentation/api?language=en-US). The interface allows for searching for movies, tv shows and people and also allows being able to browse content relevant to that person/Tv show/movie. 
 
 Future versions will include the ability to watch trailers, browse stills as well as the ability to view Tv seasons and other collections provided by the api.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
 ## Development server
 
@@ -22,7 +23,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Only a basic e2e exists for this project - It is the default ootb one provided by the angular cli. This is due to the application querying a public api that is not controlled by itself. Therefore the content of the pages could change at any point. A future improvement could be to provide a stable mock api that the test can run against but it is beyond the scope of this innitial version
+Only a basic e2e exists for this project - It is the default ootb one provided by the angular cli. This is due to the application querying a public api that is not controlled by itself. Therefore the content of the pages could change at any point. A future improvement could be to provide a stable mock api that the e2e tests can run against; but it is beyond the scope of this innitial version
 
 ## Further help
 
