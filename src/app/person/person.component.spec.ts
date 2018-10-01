@@ -5,20 +5,28 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UrlService } from '../shared/url.service';
+import { Person } from '../models/Person.model';
 
 describe('Person Component Tests:', () => {
   let component: PersonComponent;
   let fixture: ComponentFixture<PersonComponent>;
 
   const mockPerson = {
-    id: 'mockPersonId',
+    id: 1234,
     name: 'Peter Parker',
-    profile_path: 'mock-profile-path.png'
+    profile_path: 'mock-profile-path.png',
+    movie_credits: {
+      cast: []
+    },
+    tv_credits: {
+      cast: []
+    }
   };
 
   const mockUrlService = {
     getCastMemberPhotoUrl: jasmine.createSpy(),
-    getPersonProfileUrl: jasmine.createSpy()
+    getPersonProfileUrl: jasmine.createSpy(),
+    getMoviePosterUrl: jasmine.createSpy()
   };
   
   const mockActivatedRoute = {
@@ -55,7 +63,7 @@ describe('Person Component Tests:', () => {
 
   describe('On initialisation of the component', () => {
     it('should store the person that this component makes use of', () => {
-      expect(component.person).toEqual(mockPerson);
+      expect(component.person).toEqual(<Person>mockPerson);
     });
   });
 
@@ -71,7 +79,7 @@ describe('Person Component Tests:', () => {
       const mockMoviePosterFileName = 'mockMoviePosterFileName';
 
       component.getSmallMoviePosterUrl(mockMoviePosterFileName);
-      expect(mockUrlService.getPersonProfileUrl).toHaveBeenCalledWith(mockMoviePosterFileName);
+      expect(mockUrlService.getMoviePosterUrl).toHaveBeenCalledWith(mockMoviePosterFileName);
     });
   });
 });

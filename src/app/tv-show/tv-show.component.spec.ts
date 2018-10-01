@@ -5,15 +5,23 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UrlService } from '../shared/url.service';
+import { TvShow } from '../models/TvShow.model';
 
 describe('Tv Show Component Tests:', () => {
   let component: TvShowComponent;
   let fixture: ComponentFixture<TvShowComponent>;
 
   const mockTvShow = {
-    id: 'mockTvShowId',
+    id: 1234,
     title: 'The Office',
-    poster_path: 'mock-tv-show-poster-path.png'
+    poster_path: 'mock-tv-show-poster-path.png',
+    first_air_date: '2018-09-09',
+    credits: {
+      cast: []
+    },
+    reviews: {
+      results: []
+    }
   };
 
   const mockUrlService = {
@@ -55,7 +63,7 @@ describe('Tv Show Component Tests:', () => {
 
   describe('On initialisation of the component', () => {
     it('should store the tv show that the component makes use of', () => {
-      expect(component.tvShow).toEqual(mockTvShow);
+      expect(component.tvShow).toEqual(<TvShow>mockTvShow);
     });
   });
 

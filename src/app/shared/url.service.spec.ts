@@ -23,6 +23,7 @@ describe('Url Service Tests:', () => {
     injector = getTestBed();
     urlService = injector.get(UrlService);
     urlService.apiConfig = mockBaseConfig;
+    httpMock = injector.get(HttpTestingController);
   }));
 
   afterEach(() => {

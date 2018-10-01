@@ -5,15 +5,23 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UrlService } from '../shared/url.service';
+import { Movie } from '../models/Movie.model';
 
 describe('Movie Component Tests:', () => {
   let component: MovieComponent;
   let fixture: ComponentFixture<MovieComponent>;
 
   const mockMovie = {
-    id: 'mockMovieId',
+    id: 1234,
     title: 'The Nun',
-    poster_path: 'mock-poster-path.png'
+    poster_path: 'mock-poster-path.png',
+    release_date: '2018-09-09',
+    credits: {
+      cast: []
+    },
+    reviews: {
+      results: []
+    }
   };
 
   const mockUrlService = {
@@ -55,7 +63,7 @@ describe('Movie Component Tests:', () => {
 
   describe('On initialisation of the component', () => {
     it('should store the movie that the component makes use of', () => {
-      expect(component.movie).toEqual(mockMovie);
+      expect(component.movie).toEqual(<Movie>mockMovie);
     });
   });
 

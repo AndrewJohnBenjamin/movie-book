@@ -10,7 +10,7 @@ export class TvShow {
   backdrop_path?: string;
   created_by?: Array<TVCreator>;
   episode_run_time?: Array<number>;
-  first_air_date?: number;
+  first_air_date?: string;
   genres?: Array<Genre>;
   homepage?: string;
   id?: number;

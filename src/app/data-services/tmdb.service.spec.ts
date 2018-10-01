@@ -2,6 +2,10 @@ import { TmdbService } from './tmdb.service';
 import { TestBed, getTestBed, async } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { LanguageService } from '../shared/language.service';
+import { Movie } from '../models/Movie.model';
+import { TvShow } from '../models/TvShow.model';
+import { Person } from '../models/Person.model';
+import { GenericSearchResults } from '../models/GenericSearchResult';
 
 describe('TmdbService Tests:', () => {
   let tmdbService: TmdbService;
@@ -9,7 +13,8 @@ describe('TmdbService Tests:', () => {
   let httpMock: HttpTestingController;
 
   const mockLanguageService = {
-    getLanguage: jasmine.createSpy().and.returnValue('en')
+    getLanguage: jasmine.createSpy().and.returnValue('en'),
+    getLanguageFromLocalStorage: jasmine.createSpy().and.returnValue('en')
   };
 
   beforeEach(async(() => {
@@ -74,7 +79,7 @@ describe('TmdbService Tests:', () => {
       }];
 
       tmdbService.getMovie('12345', 'credits').subscribe((response) => {
-        expect(response).toEqual(mockMovie);
+        expect(response).toEqual(<Movie>mockMovie);
       });
 
       const req = httpMock.expectOne(url);
@@ -91,7 +96,7 @@ describe('TmdbService Tests:', () => {
       }];
 
       tmdbService.getTvShow('54321', 'credits').subscribe((response) => {
-        expect(response).toEqual(mockTvShow);
+        expect(response).toEqual(<TvShow>mockTvShow);
       });
 
       const req = httpMock.expectOne(url);
@@ -102,13 +107,13 @@ describe('TmdbService Tests:', () => {
 
   describe('When calling getPerson with an append_to_response param', () => {
     it('Should make a GET request to the \'person\' endpoint', () => {
-      const url = 'https://api.themoviedb.org/3/person/56789?api_key=5845d4c536f69b7de010345852498ec3&language=en&append_to_response=movie_credits';
+      const url = 'https://api.themoviedb.org/3/tv/56789?api_key=5845d4c536f69b7de010345852498ec3&language=en&append_to_response=movie_credits';
       const mockPerson = [{
         name: 'Mock Person'
       }];
 
       tmdbService.getTvShow('56789', 'movie_credits').subscribe((response) => {
-        expect(response).toEqual(mockPerson);
+        expect(response).toEqual(<Person>mockPerson);
       });
 
       const req = httpMock.expectOne(url);
@@ -119,17 +124,19 @@ describe('TmdbService Tests:', () => {
 
   describe('When calling executeSearch', () => {
     it('Should make a GET request to the \'search/multiple\' endpoint', () => {
-      const url = 'https://api.themoviedb.org/3/search/multiple?api_key=5845d4c536f69b7de010345852498ec3&query=mockquery&language=en';
-      const mockSearchResults = [{
-        name: 'Mock Person name',
-        media_type: 'person'
-      }, {
-        title: 'Mock Movie Title',
-        media_type: 'movie'
-      }];
+      const url = 'https://api.themoviedb.org/3/search/multi?api_key=5845d4c536f69b7de010345852498ec3&query=mockquery&language=en';
+      const mockSearchResults = {
+        results: [{
+          name: 'Mock Person name',
+          media_type: 'person'
+        }, {
+          title: 'Mock Movie Title',
+          media_type: 'movie'
+        }]
+      };
 
       tmdbService.executeSearch('mockquery').subscribe((response) => {
-        expect(response).toEqual(mockSearchResults);
+        expect(response).toEqual(<GenericSearchResults>mockSearchResults);
       });
 
       const req = httpMock.expectOne(url);
