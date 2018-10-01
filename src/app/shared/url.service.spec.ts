@@ -6,7 +6,7 @@ describe('Url Service Tests:', () => {
   let urlService: UrlService;
   let injector: TestBed;
   let httpMock: HttpTestingController;
-  let mockBaseConfig = {
+  const mockBaseConfig = {
     images: {
       base_url: 'http://www.image-host.com/'
     },
@@ -45,7 +45,7 @@ describe('Url Service Tests:', () => {
   describe('When the getMoviePosterUrl method is called', () => {
     describe('When the method is called with a non empty string', () => {
       it('Should return the correct url for movie posters', () => {
-        const mockMoviePosterFileName = 'mockMoviePosterFilename.png'
+        const mockMoviePosterFileName = 'mockMoviePosterFilename.png';
         expect(urlService.getMoviePosterUrl(mockMoviePosterFileName)).toEqual(`http://www.image-host.com/w185/${mockMoviePosterFileName}`);
       });
     });
@@ -60,7 +60,7 @@ describe('Url Service Tests:', () => {
   describe('When the getPersonProfileUrl method is called', () => {
     describe('When the method is called with a non empty string', () => {
       it('Should return the correct url for the persons profile', () => {
-        const mockPersonsProfilePicFileName = 'mockPersonsProfilePicFileName.png'
+        const mockPersonsProfilePicFileName = 'mockPersonsProfilePicFileName.png';
         expect(urlService.getPersonProfileUrl(mockPersonsProfilePicFileName)).toEqual(`http://www.image-host.com/w185/${mockPersonsProfilePicFileName}`);
       });
     });
@@ -75,7 +75,7 @@ describe('Url Service Tests:', () => {
   describe('When the getCastMemberPhotoUrl method is called', () => {
     describe('When the method is called with a non empty string', () => {
       it('Should return the correct url for cast members', () => {
-        const mockCastMemberImageFilename = 'mockCastMemberImageFilename.png'
+        const mockCastMemberImageFilename = 'mockCastMemberImageFilename.png';
         expect(urlService.getCastMemberPhotoUrl(mockCastMemberImageFilename)).toEqual(`http://www.image-host.com/w138_and_h175_face/${mockCastMemberImageFilename}`);
       });
     });

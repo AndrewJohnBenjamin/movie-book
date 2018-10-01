@@ -6,7 +6,7 @@
                 <div>{{ moviesInTheatres[0].title }}</div>
                 <div>{{ moviesInTheatres[0].overview }}</div>
             </div>
-            <img routerLink="/movie/{{moviesInTheatres[0].id}}" class="poster" [src]="getImage(moviesInTheatres[0].poster_path, 'w1000_and_h563_face')"
+            <img routerLink="/movie/{{moviesInTheatres[0].id}}" class="poster" [src]="getImageUrl(moviesInTheatres[0].poster_path, 'w1000_and_h563_face')"
                 *ngIf="moviesInTheatres[0].poster_path" />
         </div>
         <div class="inline-images">
@@ -14,14 +14,14 @@
                 <div class="small-tile-info no-top-margin" routerLink="/movie/{{moviesInTheatres[1].id}}">
                     <div>{{ moviesInTheatres[1].title }}</div>
                 </div>
-                <img routerLink="/movie/{{moviesInTheatres[1].id}}" [src]="getImage(moviesInTheatres[1].backdrop_path, 'w500_and_h282_face')"
+                <img routerLink="/movie/{{moviesInTheatres[1].id}}" [src]="getImageUrl(moviesInTheatres[1].backdrop_path, 'w500_and_h282_face')"
                     *ngIf="moviesInTheatres[1].backdrop_path" />
             </div>
             <div>
                 <div class="small-tile-info" routerLink="/movie/{{moviesInTheatres[2].id}}">
                     <div>{{ moviesInTheatres[2].title }}</div>
                 </div>
-                <img routerLink="/movie/{{moviesInTheatres[2].id}}" [src]="getImage(moviesInTheatres[2].backdrop_path, 'w500_and_h282_face')"
+                <img routerLink="/movie/{{moviesInTheatres[2].id}}" [src]="getImageUrl(moviesInTheatres[2].backdrop_path, 'w500_and_h282_face')"
                     *ngIf="moviesInTheatres[2].backdrop_path" />
             </div>
         </div>
@@ -31,27 +31,27 @@
         <h2>{{'ON_TV' | translate}}</h2>
         <div class="inline-images">
             <div>
-                <div class="small-tile-info no-top-margin" routerLink="/tv/{{onAirTvShows[1].id}}">
-                    <div>{{ onAirTvShows[1].name }}</div>
+                <div class="small-tile-info no-top-margin" routerLink="/tv/{{tvShowsOnAir[1].id}}">
+                    <div>{{ tvShowsOnAir[1].name }}</div>
                 </div>
-                <img routerLink="/tv/{{onAirTvShows[1].id}}" [src]="getImage(onAirTvShows[1].backdrop_path, 'w500_and_h282_face')"
-                    *ngIf="onAirTvShows[1].backdrop_path" />
+                <img routerLink="/tv/{{tvShowsOnAir[1].id}}" [src]="getImageUrl(tvShowsOnAir[1].backdrop_path, 'w500_and_h282_face')"
+                    *ngIf="tvShowsOnAir[1].backdrop_path" />
             </div>
             <div>
-                <div class="small-tile-info" routerLink="/tv/{{onAirTvShows[2].id}}">
-                    <div>{{ onAirTvShows[2].name }}</div>
+                <div class="small-tile-info" routerLink="/tv/{{tvShowsOnAir[2].id}}">
+                    <div>{{ tvShowsOnAir[2].name }}</div>
                 </div>
-                <img routerLink="/tv/{{onAirTvShows[2].id}}" [src]="getImage(onAirTvShows[2].backdrop_path, 'w500_and_h282_face')"
-                    *ngIf="onAirTvShows[2].backdrop_path" />
+                <img routerLink="/tv/{{tvShowsOnAir[2].id}}" [src]="getImageUrl(tvShowsOnAir[2].backdrop_path, 'w500_and_h282_face')"
+                    *ngIf="tvShowsOnAir[2].backdrop_path" />
             </div>
         </div>
         <div class="large-tile">
-            <div class="large-tile-info" routerLink="/tv/{{onAirTvShows[0].id}}">
-                <div>{{ onAirTvShows[0].name }}</div>
-                <div>{{ onAirTvShows[0].overview }}</div>
+            <div class="large-tile-info" routerLink="/tv/{{tvShowsOnAir[0].id}}">
+                <div>{{ tvShowsOnAir[0].name }}</div>
+                <div>{{ tvShowsOnAir[0].overview }}</div>
             </div>
-            <img routerLink="/tv/{{onAirTvShows[0].id}}" class="poster" [src]="getImage(onAirTvShows[0].poster_path, 'w1000_and_h563_face')"
-                *ngIf="onAirTvShows[0].poster_path" />
+            <img routerLink="/tv/{{tvShowsOnAir[0].id}}" class="poster" [src]="getImageUrl(tvShowsOnAir[0].poster_path, 'w1000_and_h563_face')"
+                *ngIf="tvShowsOnAir[0].poster_path" />
         </div>
     </div>
 </div>

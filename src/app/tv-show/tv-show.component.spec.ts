@@ -28,7 +28,7 @@ describe('Tv Show Component Tests:', () => {
     getCastMemberPhotoUrl: jasmine.createSpy(),
     getMoviePosterUrl: jasmine.createSpy()
   };
-  
+
   const mockActivatedRoute = {
     snapshot: {
       data: {

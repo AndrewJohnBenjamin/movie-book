@@ -28,7 +28,7 @@ describe('Movie Component Tests:', () => {
     getCastMemberPhotoUrl: jasmine.createSpy(),
     getMoviePosterUrl: jasmine.createSpy()
   };
-  
+
   const mockActivatedRoute = {
     snapshot: {
       data: {

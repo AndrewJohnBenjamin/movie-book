@@ -1,7 +1,7 @@
 import { UrlService } from '../shared/url.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TvShow } from '../models/TvShow.model';
+import { TVShow } from '../models/TVShow.model';
 
 @Component({
   selector: 'app-tv-show',
@@ -10,7 +10,7 @@ import { TvShow } from '../models/TvShow.model';
 })
 export class TvShowComponent implements OnInit {
 
-  public tvShow: TvShow;
+  public tvShow: TVShow;
 
   constructor(private route: ActivatedRoute, private urlService: UrlService) {
   }
@@ -33,7 +33,7 @@ export class TvShowComponent implements OnInit {
   /**
    * Angular on init lifecycle hook
    */
-  ngOnInit() {
+  public ngOnInit() {
     this.tvShow = this.route.snapshot.data.tvShow;
   }
 }

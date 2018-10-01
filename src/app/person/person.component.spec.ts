@@ -28,7 +28,7 @@ describe('Person Component Tests:', () => {
     getPersonProfileUrl: jasmine.createSpy(),
     getMoviePosterUrl: jasmine.createSpy()
   };
-  
+
   const mockActivatedRoute = {
     snapshot: {
       data: {

@@ -24,7 +24,8 @@ export class AppComponent implements OnInit, OnDestroy {
   public searchResults = [];
   public search = new FormControl();
 
-  constructor(private languageService: LanguageService,
+  constructor(
+    private languageService: LanguageService,
     private translateService: TranslateService,
     private tmdbService: TmdbService,
     private router: Router) {
@@ -41,7 +42,7 @@ export class AppComponent implements OnInit, OnDestroy {
   /**
    * angular onDestroy lifecycle hook
    */
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     if (this.languageSubscription) {
       this.languageSubscription.unsubscribe();
     }

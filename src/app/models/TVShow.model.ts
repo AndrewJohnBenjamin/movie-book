@@ -6,7 +6,7 @@ import { Genre } from './Genre.model';
 import { TVCreator } from './TVCreator.model';
 import { TVCredits } from './TVCredits.model';
 
-export class TvShow {
+export class TVShow {
   backdrop_path?: string;
   created_by?: Array<TVCreator>;
   episode_run_time?: Array<number>;

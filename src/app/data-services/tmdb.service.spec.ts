@@ -107,12 +107,12 @@ describe('TmdbService Tests:', () => {
 
   describe('When calling getPerson with an append_to_response param', () => {
     it('Should make a GET request to the \'person\' endpoint', () => {
-      const url = 'https://api.themoviedb.org/3/tv/56789?api_key=5845d4c536f69b7de010345852498ec3&language=en&append_to_response=movie_credits';
+      const url = 'https://api.themoviedb.org/3/person/56789?api_key=5845d4c536f69b7de010345852498ec3&language=en&append_to_response=movie_credits';
       const mockPerson = [{
         name: 'Mock Person'
       }];
 
-      tmdbService.getTvShow('56789', 'movie_credits').subscribe((response) => {
+      tmdbService.getPerson('56789', 'movie_credits').subscribe((response) => {
         expect(response).toEqual(<Person>mockPerson);
       });
 

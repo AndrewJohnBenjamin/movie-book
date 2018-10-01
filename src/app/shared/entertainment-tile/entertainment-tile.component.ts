@@ -14,7 +14,7 @@ export class EntertainmentTileComponent implements OnInit {
   public moviesInTheatres: Array<MovieSearchResult>;
 
   @Input()
-  public onAirTvShows: Array<TvShowSearchResult>;
+  public tvShowsOnAir: Array<TvShowSearchResult>;
 
   constructor(private urlService: UrlService) { }
 

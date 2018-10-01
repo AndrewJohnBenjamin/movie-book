@@ -1,4 +1,4 @@
-import { TvShow } from '../models/TvShow.model';
+import { TVShow } from '../models/TVShow.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LanguageService } from '../shared/language.service';
@@ -60,7 +60,7 @@ export class TmdbService {
  * @param tvShowId the id of the tv show to retrieve
  * @param appendToResponse any additional queries/data that should be appended to this response
  */
-  public getTvShow(tvShowId: string, appendToResponse?: string): Observable<TvShow> {
+  public getTvShow(tvShowId: string, appendToResponse?: string): Observable<TVShow> {
     let url = [
       `${environment.apiUrl}/${environment.apiVersion}/tv/${tvShowId}?api_key=${environment.apiKey}`,
       `&language=${this.languageService.getLanguageFromLocalStorage()}`
@@ -70,7 +70,7 @@ export class TmdbService {
       url += `&append_to_response=${appendToResponse}`;
     }
 
-    return this.http.get<TvShow>(url);
+    return this.http.get<TVShow>(url);
   }
 
   /**

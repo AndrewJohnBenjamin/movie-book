@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import {Resolve} from '@angular/router';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { TmdbService } from '../../data-services/tmdb.service';
-import { TvShow } from '../../models/TvShow.model';
+import { TVShow } from '../../models/TVShow.model';
 
 @Injectable()
-export class TvShowResolver implements Resolve<TvShow> {
+export class TvShowResolver implements Resolve<TVShow> {
   constructor(private tmdbService: TmdbService) {}
 
   resolve(activateRoute: ActivatedRouteSnapshot) {
