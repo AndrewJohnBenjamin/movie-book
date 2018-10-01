@@ -15,10 +15,17 @@ export class TvShowComponent implements OnInit {
   constructor(private route: ActivatedRoute, private urlService: UrlService) {
   }
 
-  public getCastMemberSmallPhotoUrl(imageName: string) {
-    return this.urlService.getCastProfileUrl(imageName);
+  /**
+   * Gets the url to the supplied cast member photo
+   * @param imageName the name of the image to retrieve
+   */
+  public getCastMemberPhotoUrl(imageName: string) {
+    return this.urlService.getCastMemberPhotoUrl(imageName);
   }
 
+  /**
+   * Gets the url to the tv poster for the tv show that this component makes use of
+   */
   public getTvShowPosterUrl() {
     return this.urlService.getMoviePosterUrl(this.tvShow.poster_path);
   }

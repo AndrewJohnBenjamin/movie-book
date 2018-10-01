@@ -44,7 +44,7 @@
                 <mat-card class="pointerCursor" routerLink="/person/{{castMember.id}}" *ngFor="let castMember of movie.credits.cast">
                     <mat-card-content>
                         <div>
-                            <img [src]="getCastMemberSmallPhotoUrl(castMember.profile_path)">
+                            <img [src]="getCastMemberPhotoUrl(castMember.profile_path)">
                             <span>{{ castMember.name }}</span>
                         </div>
                     </mat-card-content>

@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   /**
    * Angular onInit lifecycle hook
    */
-  ngOnInit() {
+  public ngOnInit() {
     this.moviesInTheatres = this.route.snapshot.data.moviesInTheatres;
     this.onAirTvShows = this.route.snapshot.data.onAirTvShows;
   }

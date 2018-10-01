@@ -60,7 +60,7 @@ export class TmdbService {
  * @param tvShowId the id of the tv show to retrieve
  * @param appendToResponse any additional queries/data that should be appended to this response
  */
-  public getTvShow(tvShowId: string, appendToResponse: string): Observable<TvShow> {
+  public getTvShow(tvShowId: string, appendToResponse?: string): Observable<TvShow> {
     let url = [
       `${environment.apiUrl}/${environment.apiVersion}/tv/${tvShowId}?api_key=${environment.apiKey}`,
       `&language=${this.languageService.getLanguageFromLocalStorage()}`

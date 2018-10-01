@@ -16,7 +16,7 @@ export class LanguageService {
    * A method that sets, and stores, the supplied language
    * @param language the language to set
    */
-  public setLanguage = (language: string) => {
+  public setLanguage(language: string) {
     window.localStorage.setItem('language', language);
     this.translate.setDefaultLang(language);
     this.currentlySelectedLanguage.next(language);
@@ -25,7 +25,7 @@ export class LanguageService {
   /**
    * A method that gets the currently selected language from local storage
    */
-  public getLanguageFromLocalStorage = () => {
+  public getLanguageFromLocalStorage() {
     if (window.localStorage.getItem('language')) {
       return window.localStorage.getItem('language');
     }

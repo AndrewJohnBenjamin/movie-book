@@ -49,10 +49,10 @@ export class UrlService {
   }
 
   /**
-* A method that retrieves a cast member image url
+* A method that retrieves a cast members profile image url
 * @param fileName the name of the image file to retrieve the url for
 */
-  public getCastProfileUrl(fileName: string) {
+  public getCastMemberPhotoUrl(fileName: string) {
     if (!fileName) {
       return this.defaultPersonPhotoUrl;
     }
@@ -60,12 +60,12 @@ export class UrlService {
     return `${this.apiConfig.images.base_url}w138_and_h175_face/${fileName}`;
   }
 
-    /**
-* A method that retrieves an image for the home page of the app
-* @param fileName the name of the image file to retrieve the url for
-* @param size the size of the image to retrieve
-*/
-  public getHomePageItemUrl(fileName: string, size: string) {
+  /**
+  * A method that retrieves the url for the supplied in the supplied size
+  * @param fileName the name of the image file to retrieve the url for
+  * @param size the size of the image to retrieve
+  */
+  public getImageUrl(fileName: string, size: string) {
     return `${this.apiConfig.images.base_url}${size}/${fileName}`;
   }
 }

@@ -32,7 +32,7 @@ export class PersonComponent implements OnInit {
   /**
    * Angular on init lifecycle hook
    */
-  ngOnInit() {
+  public ngOnInit() {
     this.person = this.route.snapshot.data.person;
   }
 }

@@ -19,12 +19,12 @@ export class MovieComponent implements OnInit {
    * A method that retrieves a small image of a cast member
    * @param imageName the name of the image to retrieve
    */
-  public getCastMemberSmallPhotoUrl(imageName: string) {
-    return this.urlService.getCastProfileUrl(imageName);
+  public getCastMemberPhotoUrl(imageName: string) {
+    return this.urlService.getCastMemberPhotoUrl(imageName);
   }
 
   /**
-   * A method that retrieves a poster
+   * A method that retrieves a poster url
    */
   public getMoviePosterUrl() {
     return this.urlService.getMoviePosterUrl(this.movie.poster_path);
@@ -33,7 +33,7 @@ export class MovieComponent implements OnInit {
   /**
    * Angular on init lifecycle hook
    */
-  ngOnInit() {
+  public ngOnInit() {
     this.movie = this.route.snapshot.data.movie;
   }
 }

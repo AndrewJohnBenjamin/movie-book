@@ -19,12 +19,12 @@ export class EntertainmentTileComponent implements OnInit {
   constructor(private urlService: UrlService) { }
 
   /**
-   * A method that retrieves the supplied image in the supplied size
-   * @param fileName the name of the image to retrieve
-   * @param size the size of the image to retrieve
+   * A method that retrieves the Url for the supplied image in the supplied size
+   * @param fileName the name of the image to retrieve to url for
+   * @param size the size of the image to retrieve the url for
    */
-  public getImage(fileName: string, size: string) {
-    return this.urlService.getHomePageItemUrl(fileName, size);
+  public getImageUrl(fileName: string, size: string) {
+    return this.urlService.getImageUrl(fileName, size);
   }
 
   /**
