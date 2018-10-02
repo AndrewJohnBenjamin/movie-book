@@ -14,14 +14,13 @@
             font-style: italic;
             width: 200px;
             >div {
-                margin-top: 16px;
                 display: flex;
                 flex-direction: column;
                 flex: 1;
                 label {
                     font-style: normal;
                     font-weight: bold;
-                    font-size: 16px;
+                    font-size: 14px;
                     margin: 5px 0;
                 }
             }
@@ -31,7 +30,7 @@
             height: 278px;
             width: 200px;
             background-color: $secondary-text-color;
-            margin-top: 80px;
+            margin-top: 60px;
         }
         .auto-height {
             height: auto;
